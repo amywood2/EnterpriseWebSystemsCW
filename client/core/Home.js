@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     borderBottom: '1px solid #d0d0d0',
     '& a':{
       color: '#3f4771'
-    } 
+    }
   }
 }))
 
@@ -38,17 +38,13 @@ export default function Home(){
         <Card className={classes.card}>
           <Typography variant="h6" className={classes.title}>
             Home Page
-          
+
           </Typography>
           <CardMedia className={classes.media} image={myImg} title="My Image"/>
           <Typography variant="body2" component="p" className={classes.credit} color="textSecondary"> Image by Picasso </Typography>
           <CardContent>
-            <Typography variant="body1" component="p">
-              Welcome to Lab Six.
-            <Link to="/users"> Users </Link>
-            </Typography>
+
           </CardContent>
         </Card>
     )
 }
-
