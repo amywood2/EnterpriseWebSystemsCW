@@ -40,8 +40,8 @@ export default function Home(){
             Home Page
 
           </Typography>
-          <CardMedia className={classes.media} image={myImg} title="My Image"/>
-          <Typography variant="body2" component="p" className={classes.credit} color="textSecondary"> Image by Picasso </Typography>
+          <CardMedia className={classes.card}/>
+          <Typography variant="h6"> second card </Typography>
           <CardContent>
 
           </CardContent>
