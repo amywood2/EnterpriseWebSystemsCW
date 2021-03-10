@@ -4,7 +4,6 @@
   "description": "Coursework using MERN for Enterprise Web Systems",
   "main": "./dist/server.generated.js",
   "scripts": {
-    "testing": "./run.sh",
     "development": "nodemon",
     "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
     "start": "NODE_ENV=production node ./dist/server.generated.js"
