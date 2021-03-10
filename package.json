@@ -1,7 +1,7 @@
 {
-  "name": "lab6userlogins",
+  "name": "WebSystemCW",
   "version": "1.0.0",
-  "description": "An actual user login",
+  "description": "Coursework using MERN for Enterprise Web Systems",
   "main": "./dist/server.generated.js",
   "scripts": {
     "testing": "./run.sh",
@@ -9,7 +9,7 @@
     "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
     "start": "NODE_ENV=production node ./dist/server.generated.js"
   },
-  "author": "Pam",
+  "author": "Amy",
   "license": "ISC",
   "dependencies": {
     "@babel/preset-react": "^7.12.13",
