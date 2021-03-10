@@ -2,11 +2,13 @@
   "name": "WebSystemCW",
   "version": "1.0.0",
   "description": "Coursework using MERN for Enterprise Web Systems",
+  "proxy" : "https://intense-inlet-01468.herokuapp.com/",
   "main": "./dist/server.generated.js",
   "scripts": {
     "development": "nodemon",
     "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
-    "start": "NODE_ENV=production node ./dist/server.generated.js"
+    "start": "NODE_ENV=production node ./dist/server.generated.js",
+    "heroku-postbuild" : "NPM_CONFIG_PRODUCTION = false npm install --prefix client"
   },
   "author": "Amy",
   "license": "ISC",
