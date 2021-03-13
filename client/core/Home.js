@@ -52,10 +52,10 @@ export default function Home(){
     return (
         <Card className={classes.card}>
           <Typography variant="h6" className={classes.title}>
-            Home Page
+            My Projects
 
           </Typography>
-        
+
         <Carousel> </Carousel>
         </Card>
     )
