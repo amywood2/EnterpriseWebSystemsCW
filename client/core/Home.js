@@ -40,11 +40,7 @@ export default function Home(){
             Home Page
 
           </Typography>
-          <CardMedia className={classes.card}/>
-          <Typography variant="h6"> second card </Typography>
-          <CardContent>
-
-          </CardContent>
+        
         </Card>
     )
 }
