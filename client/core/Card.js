@@ -2,13 +2,6 @@ import React from 'react';
 
 import CardInfo from './../core/CardInfo';
 
-const useStyles = makeStyles(theme => ({
-  cardImage: {
-    width: "10px",
-    height: "10px",
-    margin: "15px"
-  }
-})
 
 function Card(props) {
 
