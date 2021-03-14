@@ -32,7 +32,13 @@ const useStyles = makeStyles(theme => ({
     '& a':{
       color: '#3f4771'
     }
-  }
+  },
+  gcardimage: {
+  border-radius: 10px;
+  width: 300px;
+  height: 480px;
+  box-shadow: 0px 0px 3px 1px #ccc;
+}
 }))
 
 
@@ -44,7 +50,7 @@ export default function Home(props){
             My Projects
 
           </Typography>
-          
+
           <div>
           <Carousel>This is the carousel </Carousel>
           </div>
