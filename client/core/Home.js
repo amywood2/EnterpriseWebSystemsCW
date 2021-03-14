@@ -6,7 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import Carousel from './../core/Carousel'
+import Carousel from './../core/Carousel.js'
 import myImg from './../assets/images/myimage.png'
 import {Link} from 'react-router-dom'
 
