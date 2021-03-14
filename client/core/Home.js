@@ -44,6 +44,7 @@ export default function Home(props){
             My Projects
 
           </Typography>
+          
           <div>
           <Carousel>This is the carousel </Carousel>
           </div>
