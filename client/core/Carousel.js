@@ -5,7 +5,7 @@ import Card from './../core/Card';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import projectIcon from ''./../assets/images/projectIcon.png'
+import projectIcon from './../assets/images/projectIcon.png'
 
 class Carousel extends React.Component {
 
