@@ -7,9 +7,9 @@ function CardInfo(props) {
 
     return(
         <animated.div style={{"margin-top": "10px", "min-height": "100px"}}>
-            <p style={{"font-size":"24px", margin: "0px"}}>{props.title}</p>
+            <p style={{"font-size":"20px", margin: "0px"}}>{props.title}</p>
             <p style={{"font-size":"16px", margin: "0px"}}>{props.subTitle}</p>
-          //  <a href={props.link} target="_blank" rel="noopener noreferrer">View</a>
+            <a href={props.link} target="_blank" rel="noopener noreferrer">View</a>
         </animated.div>
     );
 
