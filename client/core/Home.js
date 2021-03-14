@@ -45,10 +45,11 @@ export default function Home(props){
 
           </Typography>
 
-          <div>
-          <Carousel> </Carousel>
-          </div>
-
         </Card>
+
+        <Carousel> </Carousel>
+
+
+
     );
 }
