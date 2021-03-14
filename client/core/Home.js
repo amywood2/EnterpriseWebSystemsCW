@@ -45,7 +45,7 @@ export default function Home(props){
 
           </Typography>
           <div>
-          <Carousel />
+          <Carousel>This is the carousel </Carousel>
           </div>
 
         </Card>
