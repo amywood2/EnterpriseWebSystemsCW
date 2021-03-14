@@ -52,7 +52,7 @@ export default function Home(props){
           </Typography>
 
           <div>
-          <Carousel>This is the carousel </Carousel>
+          <Carousel class={classes.gcardimage}> </Carousel>
           </div>
 
         </Card>
