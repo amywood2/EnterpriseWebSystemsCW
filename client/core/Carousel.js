@@ -1,7 +1,7 @@
 import React from 'react';
 
-//import Card from '../components/Card';
-import Card from '@material-ui/core/Card'
+import Card from './../core/Card';
+
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
