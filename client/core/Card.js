@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
     height: "10px",
     margin: "15px"
   }
-});
+})
 
 function Card(props) {
 
