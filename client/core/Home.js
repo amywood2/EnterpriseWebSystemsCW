@@ -43,11 +43,12 @@ export default function Home(props){
           <Typography variant="h6" className={classes.title}>
             My Projects
 
+            <Carousel> </Carousel>
           </Typography>
 
         </Card>
 
-        <Carousel> </Carousel>
+      
 
 
 
