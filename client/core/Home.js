@@ -103,7 +103,7 @@ class Carousel extends React.Component {
       }
     }
 
-export default function Home(){
+export default function Home(props){
   const classes = useStyles()
     return (
         <Card className={classes.card}>
