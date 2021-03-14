@@ -34,9 +34,9 @@ const useStyles = makeStyles(theme => ({
     }
   },
   gcardimage: {
-  radius: 10,
-  width: 300,
-  height: 480,
+  "border-radius": 10,
+  width: 100,
+  height: 100,
   shadow: '0px 0px 3px 1px #ccc'
 }
 }))
