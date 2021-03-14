@@ -69,8 +69,8 @@ class Carousel extends React.Component {
 
     render() {
         return(
-          <div>
             <Container fluid={true}>
+            <div>
                 <Row className="justify-content-around">
                 <div style={{float: "right"}}>
                     {this.makeItems(this.state.items)}
@@ -78,6 +78,7 @@ class Carousel extends React.Component {
                 </Row>
             </Container>
             </div>
+
         );
     }
 
