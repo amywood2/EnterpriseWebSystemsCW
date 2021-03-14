@@ -1,10 +1,8 @@
 import React from 'react';
 
-import Card from '../components/Card';
+//import Card from '../components/Card';
 
-import devgrub from '../assets/images/devgrub.png';
-import youtube from '../assets/images/youtube.png';
-import evverest from '../assets/images/evverest.png';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
