@@ -4,6 +4,8 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 import myImg from './../assets/images/myimage.png'
 import {Link} from 'react-router-dom'
 
@@ -93,11 +95,11 @@ class Carousel extends React.Component {
   render() {
     return (
       <Container fluid={true}>
-                <Row className="justify-content-around">
-                    {this.makeItems(this.state.items)}
-                </Row>
-            </Container>
-        );
+               <Row className="justify-content-around">
+                   {this.makeItems(this.state.items)}
+               </Row>
+           </Container>
+       );
       }
     }
 
@@ -110,7 +112,9 @@ export default function Home(){
 
           </Typography>
 
-        <Carousel> </Carousel>
+
+          <Carousel> </Carousel>
+
         </Card>
-    )
+    );
 }

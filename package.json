@@ -2,7 +2,7 @@
   "name": "WebSystemCW",
   "version": "1.0.0",
   "description": "Coursework using MERN for Enterprise Web Systems",
-  "proxy" : "https://intense-inlet-01468.herokuapp.com/",
+  "proxy": "https://intense-inlet-01468.herokuapp.com/",
   "main": "./dist/server.generated.js",
   "scripts": {
     "development": "nodemon",
@@ -12,6 +12,7 @@
   "author": "Amy",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
     "@babel/preset-react": "^7.12.13",
     "@hot-loader/react-dom": "^17.0.1",
     "@material-ui/core": "^4.11.3",
@@ -32,6 +33,7 @@
     "mongoose": "^5.11.19",
     "nodemon": "^2.0.7",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
     "react-hot-loader": "^4.13.0",
     "react-router": "^5.2.0",
@@ -44,6 +46,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.13.9",
     "babel-loader": "^8.2.2",
     "file-loader": "^6.2.0"
