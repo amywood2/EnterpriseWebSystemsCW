@@ -5,6 +5,7 @@ import Card from './../core/Card';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import projectIcon from ''./../assets/images/projectIcon.png'
 
 class Carousel extends React.Component {
 
@@ -16,7 +17,7 @@ class Carousel extends React.Component {
                     id: 0,
                     title: 'Dev Grub',
                     subTitle: 'The cookbook for developers',
-                  //  imgSrc: devgrub,
+                    imgSrc: projectIcon,
                   //  link: 'https://devgrub.com',
                     selected: false
                 },
@@ -24,7 +25,7 @@ class Carousel extends React.Component {
                     id: 1,
                     title: 'Garrett Love',
                     subTitle: 'YouTube channel',
-                  //  imgSrc: youtube,
+                    imgSrc: projectIcon,
                   //  link: 'https://www.youtube.com/channel/UCxSITxL2JbF229OGCqieVZw',
                     selected: false
                 },
@@ -32,7 +33,7 @@ class Carousel extends React.Component {
                     id: 2,
                     title: 'Evverest',
                     subTitle: 'A social network for developers',
-                  //  imgSrc: evverest,
+                    imgSrc: projectIcon,
                   //  link: 'https://github.com/garrettlove8/evverest',
                     selected: false
                 },
