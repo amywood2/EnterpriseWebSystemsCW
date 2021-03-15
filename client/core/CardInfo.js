@@ -10,6 +10,9 @@ function CardInfo(props) {
             <p style={{"font-size":"20px", margin: "0px"}}>{props.title}</p>
             <p style={{"font-size":"16px", margin: "0px"}}>{props.subTitle}</p>
             <a href={props.link} target="_blank" rel="noopener noreferrer">View</a>
+            <Link to={"/user/" + auth.isAuthenticated().user._id}>
+              <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
+            </Link>
         </animated.div>
     );
 
