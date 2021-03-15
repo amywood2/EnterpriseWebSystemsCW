@@ -11,8 +11,8 @@ function CardInfo(props) {
             <p style={{"font-size":"16px", margin: "0px"}}>{props.subTitle}</p>
             <a href={props.link} target="_blank" rel="noopener noreferrer">View</a>
 
-              <Button style={}>My Profile</Button>
-            
+              <Button>My Profile</Button>
+
         </animated.div>
     );
 

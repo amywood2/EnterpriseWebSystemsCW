@@ -18,7 +18,7 @@ class Carousel extends React.Component {
                     title: 'Project One',
                     subTitle: 'Description of project',
                     imgSrc: projectIcon,
-                  //  link: 'https://devgrub.com',
+                    link: 'https://devgrub.com',
                     selected: false
                 },
                 {
@@ -26,7 +26,7 @@ class Carousel extends React.Component {
                     title: 'Project Two',
                     subTitle: 'Description of project',
                     imgSrc: projectIcon,
-                  //  link: 'https://www.youtube.com/channel/UCxSITxL2JbF229OGCqieVZw',
+                    link: 'https://www.youtube.com/channel/UCxSITxL2JbF229OGCqieVZw',
                     selected: false
                 },
                 {
@@ -34,7 +34,7 @@ class Carousel extends React.Component {
                     title: 'Project Three',
                     subTitle: 'Description of project',
                     imgSrc: projectIcon,
-                  //  link: 'https://github.com/garrettlove8/evverest',
+                    link: 'https://github.com/garrettlove8/evverest',
                     selected: false
                 },
             ]
