@@ -11,6 +11,7 @@ import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   card: {
+    display: flex,
     maxWidth: 1000,
     margin: 'auto',
     marginTop: theme.spacing(5),
@@ -19,9 +20,6 @@ const useStyles = makeStyles(theme => ({
   title: {
     padding:`${theme.spacing(3)}px ${theme.spacing(2.5)}px ${theme.spacing(2)}px`,
     color: theme.palette.openTitle
-  },
-  media: {
-    minHeight: 400
   },
   credit: {
     padding: 10,
