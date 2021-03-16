@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Carousel from './../core/Carousel.js'
 import {Link} from 'react-router-dom'
+import Hero from './../core/Hero.js'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -36,9 +37,9 @@ export default function Home(props){
   const classes = useStyles()
     return (
       <>
-          
+          <Hero> </Hero>
           <Card>
-            <Carousel className={classes.card}> </Carousel>
+            <Carousel> </Carousel>
           </Card>
       </>
     );
