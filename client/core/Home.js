@@ -35,15 +35,11 @@ const useStyles = makeStyles(theme => ({
 export default function Home(props){
   const classes = useStyles()
     return (
-        <Card className={classes.card}>
-          <Typography variant="h6" className={classes.title} style={{padding: "20px",textAlign: "center"}}>
-
-            </Typography>
-
-        <Card>
-        <Carousel className={classes.card}> </Carousel>
-        </Card>
-        </Card>
-
+      <>
+          
+          <Card>
+            <Carousel className={classes.card}> </Carousel>
+          </Card>
+      </>
     );
 }

@@ -1,6 +1,5 @@
 import React from 'react'
-import {Button} from './Button'
-import './Hero.css'
+import {Button} from './../core/Button.js'
 
 function Hero(){
   return(
@@ -9,9 +8,10 @@ function Hero(){
       <h1> DISCOVER MY PROJECTS </h1>
       <p> Take a look below at my most recent projects. </p>
       <div className="hero-btns">
-        <Button className='btns'>GET STARTED</Button>
+        <Button className='btns'buttonStyle='btn--outline'
+          buttonSize='btn--large' >GET STARTED</Button>
       </div>
     </div>
-  )
+  );
 }
 export default Hero
