@@ -5,12 +5,10 @@ import CardInfo from './../core/CardInfo';
 
 function updateProject1Clicks(project1_clicks){
   return project1_clicks = project1_clicks + 1;
-  user.update();
 }
 
 function updateProject2Clicks(project2_clicks){
   return project2_clicks = project2_clicks + 1;
-  user.update();
 }
 
 function Card(props) {

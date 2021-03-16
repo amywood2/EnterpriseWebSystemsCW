@@ -37,11 +37,12 @@ export default function Home(props){
     return (
         <Card className={classes.card}>
           <Typography variant="h6" className={classes.title} style={{padding: "20px",textAlign: "center"}}>
-            My Projects
 
-          <Carousel> </Carousel>
-          </Typography>
+            </Typography>
 
+        <Card>
+        <Carousel className={classes.card}> </Carousel>
+        </Card>
         </Card>
 
     );
