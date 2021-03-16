@@ -41,19 +41,19 @@ const Menu = withRouter(({history}) => (
       }
       {
         auth.isAuthenticated() && (<span>
-          <Link to={"/user/" + auth.isAuthenticated().user._id}>
-            <IconButton style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>
-              <Avatar style={{float: "right"}}>
-                <Person/>
-              </Avatar>
-            </IconButton>
-          </Link>
           <Button color="inherit" onClick={() => {
               auth.clearJWT(() => history.push('/'))
             }}>Sign out</Button>
             <Link to="/signin">
               <Button style={isActive(history, "/signin")}>Sign In
               </Button>
+            </Link>
+            <Link to={"/user/" + auth.isAuthenticated().user._id}>
+              <IconButton style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>
+                <Avatar style={{float: "right"}}>
+                  <Person/>
+                </Avatar>
+              </IconButton>
             </Link>
         </span>)
       }
