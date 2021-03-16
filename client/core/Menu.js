@@ -18,8 +18,8 @@ const isActive = (history, path) => {
 }
 const Menu = withRouter(({history}) => (
   <AppBar position="static">
-    <Toolbar style={{padding: "20px", color: "#6b6466"}}>
-      <Link to="/" style={{color: '#ffffff', fontFamily : "Verdana"}}> MY PORTFOLIO
+    <Toolbar>
+      <Link to="/" style={{color: '#ffffff', fontFamily : "Verdana"}}> My Portfolio
       </Link>
 
       <Link to="/">

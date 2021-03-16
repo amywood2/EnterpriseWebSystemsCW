@@ -1,6 +1,7 @@
 import React from 'react'
 import {Button} from './../core/Button.js'
-import background from './../assets/images/img-home.jpg'
+import background from './../assets/images/marble.jpg'
+import {Link, withRouter} from 'react-router-dom'
 
 
 function Hero(){
@@ -21,17 +22,20 @@ function Hero(){
         fontSize: '50px',
         marginTop:'-100px',
         textAlign:"center",
-      }}> DISCOVER MY PROJECTS </h1>
+      }}> Discover my Projects </h1>
       <p style={{
-        marginTop: "8px",
+        marginTop: "4px",
         color: "#000",
         fontSize: "32px",
         fontFamily: 'Trebuchet MS',
         textAlign:"center",
-      }}> Take a look below at my most recent projects. </p>
+      }}> Take a look at my most recent projects. </p>
       <div className="hero-btns">
+      <Link to="/signin">
         <Button className='btns'buttonStyle='btn--outline'
-          buttonSize='btn--large' >GET STARTED</Button>
+          buttonSize='btn--large' >Get Started
+          </Button>
+        </Link>
       </div>
     </div>
   );
