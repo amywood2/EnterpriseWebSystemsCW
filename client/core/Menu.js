@@ -18,10 +18,10 @@ const isActive = (history, path) => {
 }
 const Menu = withRouter(({history}) => (
   <AppBar position="static">
-    <Toolbar>
-      <Typography variant="h6" color="inherit">
-        My Portfolio
-      </Typography>
+    <Toolbar style={{padding: "20px"}}>
+      <Link to="/" style={{color: '#ffffff', fontFamily : "Verdana"}}> MY PORTFOLIO
+      </Link>
+
       <Link to="/">
         <IconButton aria-label="Home" style={isActive(history, "/")}>
           <HomeIcon/>
@@ -48,16 +48,21 @@ const Menu = withRouter(({history}) => (
               <Button style={isActive(history, "/signin")}>Sign In
               </Button>
             </Link>
-            <Link to={"/user/" + auth.isAuthenticated().user._id}>
-              <IconButton style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>
-                <Avatar style={{float: "right"}}>
-                  <Person/>
-                </Avatar>
-              </IconButton>
-            </Link>
-        </span>)
-      }
+
+      <div style={{float: 'right'}}>
+    <Toolbar>
+    <Link to={"/user/" + auth.isAuthenticated().user._id}>
+      <IconButton  style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>
+        <Avatar >
+          <Person  />
+        </Avatar>
+      </IconButton>
+    </Link>
     </Toolbar>
+      </div>
+    </span>)
+  }
+  </Toolbar>
   </AppBar>
 ))
 
