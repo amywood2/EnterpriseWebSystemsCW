@@ -43,17 +43,13 @@ class Carousel extends React.Component {
 
 
     handleCardClick = (id, card) => {
-
         let items = [...this.state.items];
-
         items[id].selected = items[id].selected ? false : true;
-
         items.forEach(item => {
             if(item.id !== id) {
                 item.selected = false;
             }
         });
-
         this.setState({
             items
         });
@@ -63,6 +59,12 @@ class Carousel extends React.Component {
     makeItems = (items) => {
         return items.map(item => {
             return <Card item={item} click={(e => this.handleCardClick(item.id, e))} key={item.id} />
+            if(item[id].selected == 0 && item.selected == true){
+              user.updateProject1Clicks;
+            }
+            if(item[id].selected == 1 && item.selected == true){
+              user.updateProject2Clicks;
+            }
         })
     }
 
@@ -70,15 +72,12 @@ class Carousel extends React.Component {
     render() {
         return(
             <Container fluid={true}>
-
                 <Row className="justify-content-around">
                 <div style={{display: "flex", padding: "50px", float:"center", textAlign: "center"}}>
                     {this.makeItems(this.state.items)}
-                    </div>
+                </div>
                 </Row>
             </Container>
-
-
         );
     }
 

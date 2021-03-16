@@ -11,8 +11,7 @@ import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   card: {
-    display: flex,
-    maxWidth: 1000,
+    maxWidth: 600,
     margin: 'auto',
     marginTop: theme.spacing(5),
     marginBottom: theme.spacing(5)
@@ -37,10 +36,10 @@ export default function Home(props){
   const classes = useStyles()
     return (
         <Card className={classes.card}>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.title} style={{padding: "20px",textAlign: "center"}}>
             My Projects
 
-            <Carousel> </Carousel>
+          <Carousel> </Carousel>
           </Typography>
 
         </Card>

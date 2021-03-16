@@ -23,6 +23,14 @@ const UserSchema = new mongoose.Schema({
   created: {
     type: Date,
     default: Date.now
+  },
+  project1_clicks: {
+    type: Number,
+    default: "0"
+  },
+  project2_clicks: {
+    type: Number,
+    default: "0",
   }
 })
 
@@ -36,7 +44,7 @@ UserSchema
   .get(function() {
     return this._password
   })
-  
+
 UserSchema.path('hashed_password').validate(function(v) {
   if (this._password && this._password.length < 6) {
     this.invalidate('password', 'Password must be at least 6 characters.')
@@ -65,6 +73,5 @@ UserSchema.methods = {
     return Math.round((new Date().valueOf() * Math.random())) + ''
   }
 }
-
 
 export default mongoose.model('User', UserSchema)

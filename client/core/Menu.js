@@ -4,6 +4,8 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import HomeIcon from '@material-ui/icons/Home'
+import Avatar from '@material-ui/core/Avatar'
+import Person from '@material-ui/icons/Person'
 import Button from '@material-ui/core/Button'
 import auth from './../auth/auth-helper'
 import {Link, withRouter} from 'react-router-dom'
@@ -40,7 +42,11 @@ const Menu = withRouter(({history}) => (
       {
         auth.isAuthenticated() && (<span>
           <Link to={"/user/" + auth.isAuthenticated().user._id}>
-            <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
+            <IconButton style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>
+              <Avatar style={{float: "right"}}>
+                <Person/>
+              </Avatar>
+            </IconButton>
           </Link>
           <Button color="inherit" onClick={() => {
               auth.clearJWT(() => history.push('/'))
