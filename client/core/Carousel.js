@@ -6,9 +6,9 @@ import Card from './../core/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import projectIcon from './../assets/images/projectIcon.png'
-import podcastIcon from './../assets/images/podcast.png'
-import websiteIcon from './../assets/images/website.png'
-import blogIcon from './../assets/images/blog.png'
+import podcastIcon from './../assets/images/newpodcast.png'
+import websiteIcon from './../assets/images/newwebsite.png'
+import blogIcon from './../assets/images/newblog.png'
 
 
 class Carousel extends React.Component {

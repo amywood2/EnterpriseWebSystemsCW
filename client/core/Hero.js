@@ -1,14 +1,14 @@
 import React from 'react'
 import {Button} from './../core/Button.js'
-import background from './../assets/images/marble.jpg'
+import background from './../assets/images/img-home.jpg'
 import {Link, withRouter} from 'react-router-dom'
 
 
 function Hero(){
   return(
     <div style={{
-      backgroundImage: "url(" + background + ")",
-      height: "90vh",
+      //backgroundImage: "url(" + background + ")",
+      height: "60vh",
       width: "100%",
       display: "flex",
       flexDirection: "column",
@@ -23,13 +23,6 @@ function Hero(){
         marginTop:'-100px',
         textAlign:"center",
       }}> Discover my Projects </h1>
-      <p style={{
-        marginTop: "4px",
-        color: "#000",
-        fontSize: "32px",
-        fontFamily: 'Trebuchet MS',
-        textAlign:"center",
-      }}> Take a look at my most recent projects. </p>
       <div className="hero-btns">
       <Link to="/signin">
         <Button className='btns'buttonStyle='btn--outline'

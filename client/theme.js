@@ -7,20 +7,20 @@ const theme = createMuiTheme({
     },
     palette: {
       primary: {
-      light: '#4C4C4C',
-      main: '#4C4C4C',
-      dark: '#4C4C4C',
-      contrastText: '#fff',
+      light: '#000',
+      main: '#5e5d5d',
+      dark:  '#000',
+      contrastText: '#6b6466',
     },
     secondary: {
-      light: '#4C4C4C',
-      main: '#4C4C4C',
-      dark: '#4C4C4C',
-      contrastText: '#000',
+      light:  '#000',
+      main:  '#000',
+      dark:  '#000',
+      contrastText: '#6b6466',
     },
-      openTitle: '#6b6466',
-      protectedTitle: pink['400'],
-      type: 'light'
+      //openTitle: '#6b6466',
+    //  protectedTitle: pink['400'],
+      //type: 'light'
     }
   })
 
