@@ -50,8 +50,8 @@ const Menu = withRouter(({history}) => (
             </Link>
     <Link to={"/user/" + auth.isAuthenticated().user._id}>
       <IconButton  style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>
-        <Avatar >
-          <Person  />
+        <Avatar>
+          <Person/>
         </Avatar>
       </IconButton>
     </Link>
