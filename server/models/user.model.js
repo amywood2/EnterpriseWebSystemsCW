@@ -31,17 +31,21 @@ const UserSchema = new mongoose.Schema({
   profile_clicks:{
     type: Number,
     trim: true,
-    default: "0",
+    default: 0,
   },
   project1_clicks: {
     type: Number,
     trim: true,
-    default: "0",
+    default: 0,
   },
   project2_clicks: {
     type: Number,
     trim: true,
-    default: "0",
+    default: 0,
+  },
+  admin: {
+    type: Boolean,
+    default: false,
   }
 })
 

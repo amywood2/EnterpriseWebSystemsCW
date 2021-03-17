@@ -8,7 +8,7 @@ function Hero(){
   return(
     <div style={{
       //backgroundImage: "url(" + background + ")",
-      height: "60vh",
+      height: "40vh",
       width: "100%",
       display: "flex",
       flexDirection: "column",
