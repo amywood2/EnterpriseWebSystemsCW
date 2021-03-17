@@ -57,6 +57,24 @@ const update = async (req, res) => {
     let user = req.profile
     user = extend(user, req.body)
     user.updated = Date.now()
+    user.profile_clicks = user.profile_clicks + 1
+    await user.save()
+    user.hashed_password = undefined
+    user.salt = undefined
+    res.json(user)
+  } catch (err) {
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
+
+const projectInteraction = async (req, res) => {
+  try {
+    let user = req.profile
+    user = extend(user, req.body)
+    user.updated = Date.now()
+    user.project1_clicks = user.project1_clicks + 1
     await user.save()
     user.hashed_password = undefined
     user.salt = undefined
@@ -88,5 +106,6 @@ export default {
   read,
   list,
   remove,
+  projectInteraction,
   update
 }

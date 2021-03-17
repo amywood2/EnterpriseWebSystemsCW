@@ -52,12 +52,6 @@ const update = async (params, credentials, user) => {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + credentials.t,
-        updateProject1Clicks: function(project1_clicks){
-          return project1_clicks = project1_clicks + 1;
-        },
-        updateProject2Clicks: function(project1_clicks){
-          return project2_clicks = project2_clicks + 1;
-        }
       },
       body: JSON.stringify(user)
     })
@@ -67,14 +61,14 @@ const update = async (params, credentials, user) => {
   }
 }
 
-const updateClicks = async (params, credentials, user) => {
+const projectInteraction = async (params, credentials, user) => {
   try {
     let response = await fetch('/api/users/' + params.userId, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + credentials.t
+        'Authorization': 'Bearer ' + credentials.t,
       },
       body: JSON.stringify(user)
     })
@@ -83,6 +77,7 @@ const updateClicks = async (params, credentials, user) => {
     console.log(err)
   }
 }
+
 
 const remove = async (params, credentials) => {
   try {
@@ -105,5 +100,6 @@ export {
   list,
   read,
   update,
+  projectInteraction,
   remove
 }
