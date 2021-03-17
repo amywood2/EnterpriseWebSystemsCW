@@ -48,9 +48,6 @@ const Menu = withRouter(({history}) => (
               <Button style={isActive(history, "/signin")}>Sign In
               </Button>
             </Link>
-
-      <div style={{float: 'right'}}>
-    <Toolbar>
     <Link to={"/user/" + auth.isAuthenticated().user._id}>
       <IconButton  style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>
         <Avatar >
@@ -58,8 +55,6 @@ const Menu = withRouter(({history}) => (
         </Avatar>
       </IconButton>
     </Link>
-    </Toolbar>
-      </div>
     </span>)
   }
   </Toolbar>

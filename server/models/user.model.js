@@ -24,13 +24,15 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  about: {
+    type: String,
+    trim: true,
+  },
   project1_clicks: {
     type: Number,
-    default: "0"
   },
   project2_clicks: {
     type: Number,
-    default: "0",
   }
 })
 

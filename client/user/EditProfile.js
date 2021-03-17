@@ -43,6 +43,7 @@ export default function EditProfile({ match }) {
     name: '',
     password: '',
     email: '',
+    about: '',
     open: false,
     error: '',
     redirectToProfile: false
@@ -59,7 +60,7 @@ export default function EditProfile({ match }) {
       if (data && data.error) {
         setValues({...values, error: data.error})
       } else {
-        setValues({...values, name: data.name, email: data.email})
+        setValues({...values, name: data.name, email: data.email, about: data.about})
       }
     })
     return function cleanup(){
@@ -72,7 +73,8 @@ export default function EditProfile({ match }) {
     const user = {
       name: values.name || undefined,
       email: values.email || undefined,
-      password: values.password || undefined
+      password: values.password || undefined,
+      about: values.about || undefined
     }
     update({
       userId: match.params.userId
@@ -101,7 +103,8 @@ export default function EditProfile({ match }) {
           </Typography>
           <TextField id="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>
           <TextField id="email" type="email" label="Email" className={classes.textField} value={values.email} onChange={handleChange('email')} margin="normal"/><br/>
-          <TextField id="password" type="password" label="Password" className={classes.textField} value={values.password} onChange={handleChange('password')} margin="normal"/>
+          <TextField id="password" type="password" label="Create New Password" className={classes.textField} value={values.password} onChange={handleChange('password')} margin="normal"/>
+          <TextField id="about" label="About You" multiline rows="2" value={values.about} onChange={handleChange('about')} className={classes.textField} margin="normal" />
           <br/> {
             values.error && (<Typography component="p" color="error">
               <Icon color="error" className={classes.error}>error</Icon>
@@ -115,4 +118,3 @@ export default function EditProfile({ match }) {
       </Card>
     )
 }
-
