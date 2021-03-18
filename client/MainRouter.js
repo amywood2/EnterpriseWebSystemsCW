@@ -7,6 +7,10 @@ import Signin from './auth/Signin'
 import Gallery from './user/Gallery'
 import ViewCactusImage from './core/ViewCactusImage'
 import ViewBeeImage from './core/ViewBeeImage'
+import ViewCityImage from './core/ViewCityImage'
+import ViewFlowerImage from './core/ViewFlowerImage'
+import ViewHomeImage from './core/ViewHomeImage'
+import ViewIceburgImage from './core/ViewIceburgImage'
 import EditProfile from './user/EditProfile'
 import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
@@ -25,7 +29,12 @@ const MainRouter = () => {
         <PrivateRoute path="/user/gallery/:userId" component={Gallery}/>
         <PrivateRoute path="/user/landOfCactus/:userId" component={ViewCactusImage}/>
         <PrivateRoute path="/user/QueenBee/:userId" component={ViewBeeImage}/>
+        <PrivateRoute path="/user/theCity/:userId" component={ViewCityImage}/>
+        <PrivateRoute path="/user/summerBloom/:userId" component={ViewFlowerImage}/>
+        <PrivateRoute path="/user/ourHome/:userId" component={ViewHomeImage}/>
+        <PrivateRoute path="/user/iceCold/:userId" component={ViewIceburgImage}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
+
         <Route path="/user/:userId" component={Profile}/>
         <Route path="/useradmin/:userId" component={UserAdmin}/>
      </Switch>

@@ -155,7 +155,12 @@ export default function Gallery({ match }) {
     <img src={city} alt="cityImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
     </Typography>
-    <Button onClick={clickTotalViews}>View</Button>
+    {auth.isAuthenticated() && (<span>
+    <Link to={"/user/theCity/" + auth.isAuthenticated().user._id}>
+      <Button onClick={clickTotalViews}> View </Button>
+    </Link>
+    </span>)
+    }
     <IconButton aria-label="Save">
         <FavoriteBorderOutlinedIcon/>
     </IconButton>
@@ -170,7 +175,12 @@ export default function Gallery({ match }) {
     <img src={flower} alt="flowerImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
     </Typography>
-    <Button onClick={clickTotalViews}>View</Button>
+    {auth.isAuthenticated() && (<span>
+    <Link to={"/user/summerBloom/" + auth.isAuthenticated().user._id}>
+      <Button onClick={clickTotalViews}> View </Button>
+    </Link>
+    </span>)
+    }
     <IconButton aria-label="Save">
         <FavoriteBorderOutlinedIcon/>
     </IconButton>
@@ -180,12 +190,17 @@ export default function Gallery({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      Home
+      Our Home
     </Typography>
     <img src={house} alt="houseImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
     </Typography>
-    <Button onClick={clickTotalViews}>View</Button>
+    {auth.isAuthenticated() && (<span>
+    <Link to={"/user/ourHome/" + auth.isAuthenticated().user._id}>
+      <Button onClick={clickTotalViews}> View </Button>
+    </Link>
+    </span>)
+    }
     <IconButton aria-label="Save">
         <FavoriteBorderOutlinedIcon/>
     </IconButton>
@@ -200,7 +215,12 @@ export default function Gallery({ match }) {
     <img src={iceburg} alt="iceburgImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
     </Typography>
-    <Button onClick={clickTotalViews}>View</Button>
+    {auth.isAuthenticated() && (<span>
+    <Link to={"/user/iceCold/" + auth.isAuthenticated().user._id}>
+      <Button onClick={clickTotalViews}> View </Button>
+    </Link>
+    </span>)
+    }
     <IconButton aria-label="Save">
         <FavoriteBorderOutlinedIcon/>
     </IconButton>
