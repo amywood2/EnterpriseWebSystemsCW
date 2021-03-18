@@ -52,6 +52,17 @@ const list = async (req, res) => {
   }
 }
 
+const listadmin = async (req, res) => {
+  try {
+    let users = await User.find().select('name email about updated created admin')
+    res.json(users)
+  } catch (err) {
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
+
 const update = async (req, res) => {
   try {
     let user = req.profile
@@ -108,6 +119,7 @@ export default {
   read,
   list,
   remove,
+  listadmin,
   projectInteraction,
   update
 }

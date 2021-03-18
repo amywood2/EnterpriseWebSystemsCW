@@ -4,8 +4,6 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import HomeIcon from '@material-ui/icons/Home'
-import Avatar from '@material-ui/core/Avatar'
-import Person from '@material-ui/icons/Person'
 import Button from '@material-ui/core/Button'
 import auth from './../auth/auth-helper'
 import {Link, withRouter} from 'react-router-dom'
@@ -19,14 +17,15 @@ const isActive = (history, path) => {
 const Menu = withRouter(({history}) => (
   <AppBar position="static">
     <Toolbar>
-      <Link to="/" style={{color: '#ffffff', fontFamily : "Verdana"}}> My Portfolio
-      </Link>
-
+      <Typography variant="h6" color="inherit">
+        M y P o r t f o l i o
+      </Typography>
       <Link to="/">
         <IconButton aria-label="Home" style={isActive(history, "/")}>
           <HomeIcon/>
         </IconButton>
       </Link>
+
       {
         !auth.isAuthenticated() && (<span>
           <Link to="/signup">
@@ -41,23 +40,15 @@ const Menu = withRouter(({history}) => (
       }
       {
         auth.isAuthenticated() && (<span>
+          <Link to={"/user/" + auth.isAuthenticated().user._id}>
+            <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
+          </Link>
           <Button color="inherit" onClick={() => {
               auth.clearJWT(() => history.push('/'))
             }}>Sign out</Button>
-            <Link to="/signin">
-              <Button style={isActive(history, "/signin")}>Sign In
-              </Button>
-            </Link>
-    <Link to={"/user/" + auth.isAuthenticated().user._id}>
-      <IconButton  style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>
-        <Avatar>
-          <Person/>
-        </Avatar>
-      </IconButton>
-    </Link>
-    </span>)
-  }
-  </Toolbar>
+        </span>)
+      }
+    </Toolbar>
   </AppBar>
 ))
 

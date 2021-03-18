@@ -32,16 +32,19 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     trim: true,
     default: 0,
+    min:0,
   },
   project1_clicks: {
     type: Number,
     trim: true,
     default: 0,
+    min:0,
   },
   project2_clicks: {
     type: Number,
     trim: true,
     default: 0,
+    min:0,
   },
   admin: {
     type: Boolean,

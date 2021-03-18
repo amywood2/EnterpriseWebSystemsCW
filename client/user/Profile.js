@@ -10,12 +10,13 @@ import Avatar from '@material-ui/core/Avatar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import Edit from '@material-ui/icons/Edit'
+import People from '@material-ui/icons/People'
 import Person from '@material-ui/icons/Person'
 import Divider from '@material-ui/core/Divider'
 import DeleteUser from './DeleteUser'
 import auth from './../auth/auth-helper'
 import {read} from './api-user.js'
-import {Redirect, Link} from 'react-router-dom'
+import {Redirect, Link, withRouter} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -60,39 +61,82 @@ export default function Profile({ match }) {
       return <Redirect to='/signin'/>
     }
     return (
+      <div>
+      <div style={{float:"left", width: "100%", height: "50hv"}}>
       <Paper className={classes.root} elevation={4}>
         <Typography variant="h6" className={classes.title}>
           Profile
         </Typography>
         <List dense>
           <ListItem>
+
             <ListItemAvatar>
               <Avatar>
                 <Person/>
               </Avatar>
             </ListItemAvatar>
+
             <ListItemText primary={user.name} secondary={user.email}/> {
              auth.isAuthenticated().user && auth.isAuthenticated().user._id == user._id &&
               (<ListItemSecondaryAction>
                 <Link to={"/user/edit/" + user._id}>
-                  <IconButton aria-label="Edit" color="primary">
-                    <Edit/>
+
+                <IconButton aria-label="Edit">
+                  <Edit/>
                   </IconButton>
                 </Link>
-                <DeleteUser userId={user._id}/>
-              </ListItemSecondaryAction>)
 
+                <IconButton aria-label="Delete">
+                  <DeleteUser userId={user._id} />
+                </IconButton>
+
+                {user.admin == true &&
+                <Link to={"/users"}>
+                  <IconButton aria-label="People">
+                    <People/>
+                  </IconButton>
+                </Link>
+              }
+              </ListItemSecondaryAction>
+            )
             }
+          </ListItem>
+          <ListItem>
+          	<ListItemText primary={user.about}/>
+          </ListItem>
+          <Divider/>
+          </List>
+      </Paper>
+      </div>
+
+      <div style={{float:"left", width: "100%", height: "50hv"}}>
+      <Paper className={classes.root} elevation={4}>
+      <Typography variant="h6" className={classes.title}>
+        Interactions
+      </Typography>
+        <List dense>
+          <ListItem>
+          	<ListItemText primary={"Profile edits: " + user.profileclicks}/>
+          </ListItem>
+          <Divider/>
+          <ListItem>
+          	<ListItemText primary={"Project1 clicks: " + user.project1_clicks}/>
+          </ListItem>
+          <Divider/>
+          <ListItem>
+          	<ListItemText primary={"Project1 clicks: " + user.project1_clicks}/>
           </ListItem>
           <Divider/>
           <ListItem>
             <ListItemText primary={"Joined: " + (
               new Date(user.created)).toDateString()}/>
           </ListItem>
-          <ListItem>
-          <ListItemText primary={user.about}/>
-          </ListItem>
-        </List>
+          </List>
       </Paper>
+        </div>
+      </div>
+
+
+
     )
   }
