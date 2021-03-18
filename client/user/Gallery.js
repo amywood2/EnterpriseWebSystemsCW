@@ -104,7 +104,7 @@ export default function Gallery({ match }) {
   }
 
     return (
-    <div style={{display: "inline-block", padding: "20px"}}>
+    <div style={{padding: "20px"}}>
 
     <div>
     <Card className={classes.card}>
