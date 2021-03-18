@@ -80,12 +80,12 @@ const update = async (req, res) => {
   }
 }
 
-const projectInteraction = async (req, res) => {
+const updateBeeViews = async (req, res) => {
   try {
     let user = req.profile
     user = extend(user, req.body)
     user.updated = Date.now()
-    user.podcastClicks = user.podcastClicks + 1
+    user.beeImageViews = user.beeImageViews + 1
     await user.save()
     user.hashed_password = undefined
     user.salt = undefined
@@ -97,7 +97,22 @@ const projectInteraction = async (req, res) => {
   }
 }
 
-
+const updateCactusViews = async (req, res) => {
+  try {
+    let user = req.profile
+    user = extend(user, req.body)
+    user.updated = Date.now()
+    user.cactusImageViews = user.cactusImageViews + 1
+    await user.save()
+    user.hashed_password = undefined
+    user.salt = undefined
+    res.json(user)
+  } catch (err) {
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
 
 const remove = async (req, res) => {
   try {
@@ -113,8 +128,6 @@ const remove = async (req, res) => {
   }
 }
 
-
-
 export default {
   create,
   userByID,
@@ -122,6 +135,7 @@ export default {
   list,
   listadmin,
   update,
-  projectInteraction,
+  updateBeeViews,
+  updateCactusViews,
   remove
 }

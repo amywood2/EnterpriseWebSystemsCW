@@ -8,13 +8,25 @@ import Typography from '@material-ui/core/Typography'
 import Icon from '@material-ui/core/Icon'
 import { makeStyles } from '@material-ui/core/styles'
 import auth from './../auth/auth-helper'
-import {read, projectInteraction} from './api-user.js'
+import {read, updateBeeViews, updateCactusViews} from './api-user.js'
 import {Redirect} from 'react-router-dom'
 import Carousel from './../core/Carousel.js'
+import cactus from './../assets/images/cactus.png'
+import bee from './../assets/images/bee.png'
+import city from './../assets/images/city.png'
+import flower from './../assets/images/flower.png'
+import iceburg from './../assets/images/iceburg.png'
+import house from './../assets/images/house.png'
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+import ListItem from '@material-ui/core/ListItem'
+import ListItemAvatar from '@material-ui/core/ListItemAvatar'
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
+import ListItemText from '@material-ui/core/ListItemText'
+import IconButton from '@material-ui/core/IconButton'
 
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 600,
+    maxWidth: 400,
     margin: 'auto',
     textAlign: 'center',
     marginTop: theme.spacing(5),
@@ -70,14 +82,14 @@ export default function Gallery({ match }) {
 
   }, [match.params.userId])
 
-  const clickSubmit = () => {
+  const clickBeeView = () => {
     const user = {
       name: values.name || undefined,
       about: values.about || undefined,
       email: values.email || undefined,
       password: values.password || undefined
     }
-    projectInteraction({
+    updateBeeViews({
       userId: match.params.userId
     }, {
       t: jwt.token
@@ -89,18 +101,64 @@ export default function Gallery({ match }) {
       }
     })
   }
-  const handleChange = name => event => {
-    setValues({...values, [name]: event.target.value})
+
+  const clickCactusView = () => {
+    const user = {
+      name: values.name || undefined,
+      about: values.about || undefined,
+      email: values.email || undefined,
+      password: values.password || undefined
+    }
+    updateCactusViews({
+      userId: match.params.userId
+    }, {
+      t: jwt.token
+    }, user).then((data) => {
+      if (data && data.error) {
+        setValues({...values, error: data.error})
+      } else {
+        setValues({...values, userId: data._id, redirectToProfile: false})
+      }
+    })
   }
 
-    if (values.redirectToProfile) {
-      return (<Redirect to={'/user/' + values.userId}/>)
-    }
+
     return (
+    <div style={{display: "inline-block", padding: "20px"}}>
+
+    <div>
     <Card className={classes.card}>
-    <CardActions>
-    <Button onClick ={clickSubmit}> submit> </Button>
-      </CardActions>
+    <Typography variant="h6" className={classes.title}>
+      Queen Bee
+    </Typography>
+    <img src={bee} alt="beeImage" style={{height: "200px", width: "300px"}} />
+    <Typography variant="h6">
+      Description
+    </Typography>
+    <Button onClick={clickBeeView}>View</Button>
+    <IconButton aria-label="Save">
+        <FavoriteBorderOutlinedIcon/>
+    </IconButton>
     </Card>
+    </div>
+
+    <div>
+    <Card className={classes.card}>
+    <Typography variant="h6" className={classes.title}>
+      The Land of Cactus
+    </Typography>
+    <img src={cactus} alt="cactusImage" style={{height: "200px", width: "300px"}} />
+    <Typography variant="h6">
+      Description
+    </Typography>
+    <Button onClick={clickCactusView}>View</Button>
+    <IconButton aria-label="Save">
+        <FavoriteBorderOutlinedIcon/>
+    </IconButton>
+    </Card>
+    </div>
+
+
+    </div>
     )
 }

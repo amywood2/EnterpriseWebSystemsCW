@@ -33,7 +33,22 @@ const UserSchema = new mongoose.Schema({
     default: 0,
     min: 0,
   },
-  podcastClicks:{
+  beeImageViews:{
+    type: Number,
+    default: 0,
+    min: 0,
+  },
+  beeImageSaves:{
+    type: Number,
+    default: 0,
+    min: 0,
+  },
+  cactusImageViews:{
+    type: Number,
+    default: 0,
+    min: 0,
+  },
+  cactusImageSaves:{
     type: Number,
     default: 0,
     min: 0,

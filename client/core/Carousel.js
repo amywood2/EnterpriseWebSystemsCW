@@ -2,10 +2,6 @@ import React, {useState, useEffect} from 'react'
 import Card from './../core/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import projectIcon from './../assets/images/projectIcon.png'
-import podcastIcon from './../assets/images/newpodcast.png'
-import websiteIcon from './../assets/images/newwebsite.png'
-import blogIcon from './../assets/images/newblog.png'
 import {read, projectInteraction} from './../user/api-user.js'
 import auth from './../auth/auth-helper'
 

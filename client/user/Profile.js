@@ -17,6 +17,7 @@ import DeleteUser from './DeleteUser'
 import auth from './../auth/auth-helper'
 import {read} from './api-user.js'
 import {Redirect, Link, withRouter} from 'react-router-dom'
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -90,6 +91,10 @@ export default function Profile({ match }) {
                   <DeleteUser userId={user._id} />
                 </IconButton>
 
+                <IconButton aria-label="Saved">
+                  <FavoriteIcon/>
+                </IconButton>
+
                 {user.admin == true &&
                 <Link to={"/users"}>
                   <IconButton aria-label="People">
@@ -119,19 +124,39 @@ export default function Profile({ match }) {
           	<ListItemText primary={"Profile edits: " + user.profileclicks}/>
           </ListItem>
 
-          <Divider/>
-          <ListItem>
-          	<ListItemText primary={"Podcast clicks: " + user.podcastClicks}/>
-          </ListItem>
-          <Divider/>
-          <ListItem>
-          	<ListItemText primary={"Project1 clicks: " + user.project1_clicks}/>
-          </ListItem>
-
-          <Divider/>
           <ListItem>
             <ListItemText primary={"Joined: " + (
               new Date(user.created)).toDateString()}/>
+          </ListItem>
+
+          <Divider/>
+
+          <Typography variant="h6" className={classes.title}>
+            Gallery Views
+          </Typography>
+
+          <ListItem>
+          	<ListItemText primary={"The land of Cactus: " + user.cactusImageViews + " views"}/>
+          </ListItem>
+
+          <ListItem>
+          	<ListItemText primary={"The City: " + user.cityImageViews + " views"}/>
+          </ListItem>
+
+          <ListItem>
+          	<ListItemText primary={"Queen Bee views: " + user.beeImageViews + " views"}/>
+          </ListItem>
+
+          <ListItem>
+          	<ListItemText primary={"Summer Bloom: " + user.flowerImageViews + " views"}/>
+          </ListItem>
+
+          <ListItem>
+          	<ListItemText primary={"Home: " + user.houseImageViews + " views"}/>
+          </ListItem>
+
+          <ListItem>
+          	<ListItemText primary={"Ice Cold: " + user.iceburgImageViews + " views"}/>
           </ListItem>
           </List>
       </Paper>

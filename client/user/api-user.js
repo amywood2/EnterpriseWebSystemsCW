@@ -62,10 +62,10 @@ const update = async (params, credentials, user) => {
   }
 }
 
-const projectInteraction = async (params, credentials, user) => {
+const updateBeeViews = async (params, credentials, user) => {
   try {
     let response = await fetch('/api/users/' + params.userId, {
-      method: 'PUT',
+      method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -79,9 +79,22 @@ const projectInteraction = async (params, credentials, user) => {
   }
 }
 
-
-
-
+const updateCactusViews = async (params, credentials, user) => {
+  try {
+    let response = await fetch('/api/users/' + params.userId, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + credentials.t,
+      },
+      body: JSON.stringify(user)
+    })
+    return await response.json()
+  } catch(err) {
+    console.log(err)
+  }
+}
 
 const remove = async (params, credentials) => {
   try {
@@ -104,6 +117,7 @@ export {
   list,
   read,
   update,
-  projectInteraction,
+  updateBeeViews,
+  updateCactusViews,
   remove
 }

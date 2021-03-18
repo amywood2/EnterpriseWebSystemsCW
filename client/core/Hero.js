@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
 import Button from '@material-ui/core/Button'
-import background from './../assets/images/img-home.jpg'
 import {Link, withRouter} from 'react-router-dom'
 import auth from './../auth/auth-helper'
 
 
 const Hero = withRouter(({history}) => (
     <div style={{
-      //backgroundImage: "url(" + background + ")",
       height: "40vh",
       width: "100%",
       display: "flex",
