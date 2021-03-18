@@ -28,27 +28,19 @@ const UserSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-  profile_clicks:{
+  profileclicks: {
     type: Number,
-    trim: true,
     default: 0,
-    min:0,
+    min: 0
   },
-  project1_clicks: {
+  podcastClicks:{
     type: Number,
-    trim: true,
     default: 0,
-    min:0,
-  },
-  project2_clicks: {
-    type: Number,
-    trim: true,
-    default: 0,
-    min:0,
+    min: 0
   },
   admin: {
-    type: Boolean,
-    default: false,
+  	type: Boolean,
+  	default: false
   }
 })
 
@@ -91,5 +83,6 @@ UserSchema.methods = {
     return Math.round((new Date().valueOf() * Math.random())) + ''
   }
 }
+
 
 export default mongoose.model('User', UserSchema)

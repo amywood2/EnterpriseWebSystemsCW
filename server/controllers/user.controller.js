@@ -68,7 +68,7 @@ const update = async (req, res) => {
     let user = req.profile
     user = extend(user, req.body)
     user.updated = Date.now()
-    user.profile_clicks = user.profile_clicks + 1
+    user.profileclicks = user.profileclicks + 1
     await user.save()
     user.hashed_password = undefined
     user.salt = undefined
@@ -85,7 +85,7 @@ const projectInteraction = async (req, res) => {
     let user = req.profile
     user = extend(user, req.body)
     user.updated = Date.now()
-    user.project1_clicks = user.project1_clicks + 1
+    user.podcastClicks = user.podcastClicks + 1
     await user.save()
     user.hashed_password = undefined
     user.salt = undefined
@@ -96,6 +96,7 @@ const projectInteraction = async (req, res) => {
     })
   }
 }
+
 
 const remove = async (req, res) => {
   try {

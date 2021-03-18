@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row'
 import Carousel from './../core/Carousel.js'
 import {Link} from 'react-router-dom'
 import Hero from './../core/Hero.js'
-
+import Footer from './../core/Footer.js'
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 600,
@@ -37,10 +37,11 @@ export default function Home(props){
   const classes = useStyles()
     return (
       <>
+      <Card>
           <Hero> </Hero>
-          <Card>
-            <Carousel> </Carousel>
           </Card>
+        <Footer> </Footer>
+
       </>
     );
 }

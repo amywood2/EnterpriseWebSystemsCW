@@ -118,14 +118,16 @@ export default function Profile({ match }) {
           <ListItem>
           	<ListItemText primary={"Profile edits: " + user.profileclicks}/>
           </ListItem>
+
           <Divider/>
           <ListItem>
-          	<ListItemText primary={"Project1 clicks: " + user.project1_clicks}/>
+          	<ListItemText primary={"Podcast clicks: " + user.podcastClicks}/>
           </ListItem>
           <Divider/>
           <ListItem>
           	<ListItemText primary={"Project1 clicks: " + user.project1_clicks}/>
           </ListItem>
+
           <Divider/>
           <ListItem>
             <ListItemText primary={"Joined: " + (

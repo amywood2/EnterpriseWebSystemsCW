@@ -1,19 +1,17 @@
-import React from 'react';
-
+import React, {useState, useEffect} from 'react'
 import Card from './../core/Card';
-
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import projectIcon from './../assets/images/projectIcon.png'
 import podcastIcon from './../assets/images/newpodcast.png'
 import websiteIcon from './../assets/images/newwebsite.png'
 import blogIcon from './../assets/images/newblog.png'
-
+import {read, projectInteraction} from './../user/api-user.js'
+import auth from './../auth/auth-helper'
 
 class Carousel extends React.Component {
 
-    constructor(props) {
+    constructor(props, {match}) {
         super(props);
         this.state = {
             items: [
@@ -59,23 +57,21 @@ class Carousel extends React.Component {
         this.setState({
             items
         });
-    }
+
+        this.update()
+      }
+
 
     makeItems = (items) => {
         return items.map(item => {
             return <Card item={item} click={(e => this.handleCardClick(item.id, e))} key={item.id} />
-            if(item[id].selected == 0 && item.selected == true){
-              user.updateProject1Clicks;
-            }
-            if(item[id].selected == 1 && item.selected == true){
-              user.updateProject2Clicks;
-            }
+
         })
     }
 
     changeImgScr = (imgSrc) => {
       return items.map(item => {
-        return <Card item={item} imgSrc="projectIcon"/>
+        return <Card item={item} />
       })
     }
 

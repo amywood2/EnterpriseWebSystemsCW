@@ -1,11 +1,11 @@
 import React from 'react'
-import {Button} from './../core/Button.js'
+import Button from '@material-ui/core/Button'
 import background from './../assets/images/img-home.jpg'
 import {Link, withRouter} from 'react-router-dom'
+import auth from './../auth/auth-helper'
 
 
-function Hero(){
-  return(
+const Hero = withRouter(({history}) => (
     <div style={{
       //backgroundImage: "url(" + background + ")",
       height: "40vh",
@@ -23,14 +23,15 @@ function Hero(){
         marginTop:'-100px',
         textAlign:"center",
       }}> Discover my Projects </h1>
-      <div className="hero-btns">
-      <Link to="/signin">
-        <Button className='btns'buttonStyle='btn--outline'
-          buttonSize='btn--large' >Get Started
-          </Button>
-        </Link>
+
+
+      <div>
+      <Link to="/gallery">
+        <Button>
+        ENTER THE GALLERY
+        </Button>
+      </Link>
       </div>
-    </div>
-  );
-}
+      </div>
+))
 export default Hero
