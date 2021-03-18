@@ -31,12 +31,12 @@ const UserSchema = new mongoose.Schema({
   profileclicks: {
     type: Number,
     default: 0,
-    min: 0
+    min: 0,
   },
   podcastClicks:{
     type: Number,
     default: 0,
-    min: 0
+    min: 0,
   },
   admin: {
   	type: Boolean,

@@ -18,13 +18,24 @@ const Menu = withRouter(({history}) => (
   <AppBar position="static">
     <Toolbar>
       <Typography variant="h6" color="inherit">
-        M y P o r t f o l i o
+        My Gallery
       </Typography>
+      {!auth.isAuthenticated() && (<span>
       <Link to="/">
         <IconButton aria-label="Home" style={isActive(history, "/")}>
           <HomeIcon/>
         </IconButton>
       </Link>
+      </span>)
+      }
+      {auth.isAuthenticated() && (<span>
+      <Link to={"/user/gallery/" + auth.isAuthenticated().user._id}>
+        <IconButton aria-label="Home" style={isActive(history, "/user/gallery" + auth.isAuthenticated().user._id)}>
+          <HomeIcon/>
+        </IconButton>
+      </Link>
+      </span>)
+      }
       {
         !auth.isAuthenticated() && (<span>
           <Link to="/signup">

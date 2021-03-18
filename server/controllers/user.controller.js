@@ -98,6 +98,7 @@ const projectInteraction = async (req, res) => {
 }
 
 
+
 const remove = async (req, res) => {
   try {
     let user = req.profile
@@ -119,8 +120,8 @@ export default {
   userByID,
   read,
   list,
-  remove,
   listadmin,
+  update,
   projectInteraction,
-  update
+  remove
 }

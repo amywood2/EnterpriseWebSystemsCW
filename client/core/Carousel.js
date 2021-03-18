@@ -41,6 +41,32 @@ class Carousel extends React.Component {
                     link: 'https://github.com/garrettlove8/evverest',
                     selected: false
                 },
+                {
+                    id: 3,
+                    title: 'Project One',
+                    subTitle: 'Description of project',
+
+                    imgSrc: podcastIcon,
+                    link: 'https://devgrub.com',
+                    selected: false
+                },
+                {
+                    id: 4,
+                    title: 'Project Two',
+                    subTitle: 'Description of project',
+                    imgSrc: websiteIcon,
+                    link: 'https://www.youtube.com/channel/UCxSITxL2JbF229OGCqieVZw',
+                    selected: false
+
+                },
+                {
+                    id: 5,
+                    title: 'Project Three',
+                    subTitle: 'Description of project',
+                    imgSrc: blogIcon,
+                    link: 'https://github.com/garrettlove8/evverest',
+                    selected: false
+                },
             ]
         }
     }
@@ -77,13 +103,11 @@ class Carousel extends React.Component {
 
     render() {
         return(
-            <Container fluid={true}>
-                <Row className="justify-content-around">
-                <div style={{display: "flex", float:"center", textAlign: "center"}}>
+
+                <div style={{textAlign: "center"}}>
                     {this.makeItems(this.state.items)}
                 </div>
-                </Row>
-            </Container>
+
         );
     }
 

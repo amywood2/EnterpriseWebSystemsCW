@@ -10,6 +10,12 @@ import Carousel from './../core/Carousel.js'
 import {Link} from 'react-router-dom'
 import Hero from './../core/Hero.js'
 import Footer from './../core/Footer.js'
+import Dialog from '@material-ui/core/Dialog'
+import DialogActions from '@material-ui/core/DialogActions'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogContentText from '@material-ui/core/DialogContentText'
+import DialogTitle from '@material-ui/core/DialogTitle'
+
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 600,
@@ -39,7 +45,7 @@ export default function Home(props){
       <>
       <Card>
           <Hero> </Hero>
-          </Card>
+      </Card>
         <Footer> </Footer>
 
       </>

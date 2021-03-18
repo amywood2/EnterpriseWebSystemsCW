@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Button from '@material-ui/core/Button'
 import background from './../assets/images/img-home.jpg'
 import {Link, withRouter} from 'react-router-dom'
@@ -24,14 +24,11 @@ const Hero = withRouter(({history}) => (
         textAlign:"center",
       }}> Discover my Projects </h1>
 
-
-      <div>
-      <Link to="/gallery">
-        <Button>
-        ENTER THE GALLERY
+      <Link to="/signin">
+        <Button color="primary" autoFocus="autoFocus" variant="contained">
+          Sign In
         </Button>
       </Link>
-      </div>
       </div>
 ))
 export default Hero

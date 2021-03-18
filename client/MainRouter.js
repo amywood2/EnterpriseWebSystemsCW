@@ -19,7 +19,7 @@ const MainRouter = () => {
         <Route path="/users" component={Users}/>
         <Route path="/signup" component={Signup}/>
         <Route path="/signin" component={Signin}/>
-        <Route path="/gallery" component={Gallery}/>
+        <PrivateRoute path="/user/gallery/:userId" component={Gallery}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
         <Route path="/useradmin/:userId" component={UserAdmin}/>

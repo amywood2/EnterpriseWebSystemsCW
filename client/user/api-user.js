@@ -82,6 +82,7 @@ const projectInteraction = async (params, credentials, user) => {
 
 
 
+
 const remove = async (params, credentials) => {
   try {
     let response = await fetch('/api/users/' + params.userId, {

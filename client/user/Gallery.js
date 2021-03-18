@@ -8,9 +8,9 @@ import Typography from '@material-ui/core/Typography'
 import Icon from '@material-ui/core/Icon'
 import { makeStyles } from '@material-ui/core/styles'
 import auth from './../auth/auth-helper'
-import {read, update} from './api-user.js'
+import {read, projectInteraction} from './api-user.js'
 import {Redirect} from 'react-router-dom'
-import Carousel from './../core/Carousel'
+import Carousel from './../core/Carousel.js'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -70,14 +70,14 @@ export default function Gallery({ match }) {
 
   }, [match.params.userId])
 
-  const clickSubmit = () => {
+  const clickCard = () => {
     const user = {
       name: values.name || undefined,
       about: values.about || undefined,
       email: values.email || undefined,
       password: values.password || undefined
     }
-    update({
+    projectInteraction({
       userId: match.params.userId
     }, {
       t: jwt.token
@@ -93,9 +93,14 @@ export default function Gallery({ match }) {
     setValues({...values, [name]: event.target.value})
   }
 
+    if (values.redirectToProfile) {
+      return (<Redirect to={'/user/' + values.userId}/>)
+    }
     return (
-      <Card className={classes.card}>
-        <Carousel> </Carousel>
-      </Card>
+    <Card className={classes.card}>
+    <CardActions>
+      <Carousel onClick={clickCard}> </Carousel>
+      </CardActions>
+    </Card>
     )
 }
