@@ -129,6 +129,26 @@ export default function Gallery({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
+      Field of Dreams
+    </Typography>
+    <img src={field} alt="fieldImage" style={{height: "200px", width: "300px"}} />
+    <Typography variant="h6">
+    </Typography>
+    {auth.isAuthenticated() && (<span>
+    <Link to={"/user/fieldOfDreams/" + auth.isAuthenticated().user._id}>
+      <Button onClick={clickTotalViews}> View </Button>
+    </Link>
+    </span>)
+    }
+    <IconButton aria-label="Save">
+        <FavoriteBorderOutlinedIcon/>
+    </IconButton>
+    </Card>
+    </div>
+
+    <div>
+    <Card className={classes.card}>
+    <Typography variant="h6" className={classes.title}>
       The Land of Cactus
     </Typography>
     <img src={cactus} alt="cactusImage" style={{height: "200px", width: "300px"}} />
@@ -227,6 +247,27 @@ export default function Gallery({ match }) {
     </IconButton>
     </Card>
     </div>
+
+    <div>
+    <Card className={classes.card}>
+    <Typography variant="h6" className={classes.title}>
+      Daisy Field
+    </Typography>
+    <img src={daisy} alt="daisyImage" style={{height: "200px", width: "300px"}} />
+    <Typography variant="h6">
+    </Typography>
+    {auth.isAuthenticated() && (<span>
+    <Link to={"/user/daisyField/" + auth.isAuthenticated().user._id}>
+      <Button onClick={clickTotalViews}> View </Button>
+    </Link>
+    </span>)
+    }
+    <IconButton aria-label="Save">
+        <FavoriteBorderOutlinedIcon/>
+    </IconButton>
+    </Card>
+    </div>
+
 
 
 

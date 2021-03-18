@@ -11,6 +11,8 @@ import ViewCityImage from './core/ViewCityImage'
 import ViewFlowerImage from './core/ViewFlowerImage'
 import ViewHomeImage from './core/ViewHomeImage'
 import ViewIceburgImage from './core/ViewIceburgImage'
+import ViewDaisyImage from './core/ViewDaisyImage'
+import ViewFieldImage from './core/ViewFieldImage'
 import EditProfile from './user/EditProfile'
 import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
@@ -33,6 +35,8 @@ const MainRouter = () => {
         <PrivateRoute path="/user/summerBloom/:userId" component={ViewFlowerImage}/>
         <PrivateRoute path="/user/ourHome/:userId" component={ViewHomeImage}/>
         <PrivateRoute path="/user/iceCold/:userId" component={ViewIceburgImage}/>
+        <PrivateRoute path="/user/fieldOfDreams/:userId" component={ViewFieldImage}/>
+        <PrivateRoute path="/user/daisyField/:userId" component={ViewIceburgImage}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
 
         <Route path="/user/:userId" component={Profile}/>
