@@ -104,7 +104,7 @@ export default function Gallery({ match }) {
   }
 
     return (
-    <div style={{padding: "20px"}}>
+    <div style={{padding: "10px",  display: "grid", overflow: "hidden", gridTemplateColumns: "repeat(auto-fill, minmax(20rem, 1fr))"}}>
 
     <div>
     <Card className={classes.card}>
@@ -140,7 +140,6 @@ export default function Gallery({ match }) {
       </Link>
       </span>)
       }
-
       <IconButton aria-label="Save">
       <FavoriteBorderOutlinedIcon/>
      </IconButton>
@@ -167,7 +166,9 @@ export default function Gallery({ match }) {
     </Card>
     </div>
 
-  <div>
+
+
+    <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
       Summer Bloom
