@@ -70,7 +70,7 @@ export default function Gallery({ match }) {
 
   }, [match.params.userId])
 
-  const clickCard = () => {
+  const clickSubmit = () => {
     const user = {
       name: values.name || undefined,
       about: values.about || undefined,
@@ -85,7 +85,7 @@ export default function Gallery({ match }) {
       if (data && data.error) {
         setValues({...values, error: data.error})
       } else {
-        setValues({...values, userId: data._id, redirectToProfile: true})
+        setValues({...values, userId: data._id, redirectToProfile: false})
       }
     })
   }
@@ -99,7 +99,7 @@ export default function Gallery({ match }) {
     return (
     <Card className={classes.card}>
     <CardActions>
-      <Carousel onClick={clickCard}> </Carousel>
+    <Button onClick ={clickSubmit}> submit> </Button>
       </CardActions>
     </Card>
     )
