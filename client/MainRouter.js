@@ -5,11 +5,14 @@ import Users from './user/Users'
 import Signup from './user/Signup'
 import Signin from './auth/Signin'
 import Gallery from './user/Gallery'
+import ViewCactusImage from './core/ViewCactusImage'
+import ViewBeeImage from './core/ViewBeeImage'
 import EditProfile from './user/EditProfile'
 import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
 import UserAdmin from './user/UsersAdmin'
 import Menu from './core/Menu'
+
 
 const MainRouter = () => {
     return (<div>
@@ -20,6 +23,8 @@ const MainRouter = () => {
         <Route path="/signup" component={Signup}/>
         <Route path="/signin" component={Signin}/>
         <PrivateRoute path="/user/gallery/:userId" component={Gallery}/>
+        <PrivateRoute path="/user/landOfCactus/:userId" component={ViewCactusImage}/>
+        <PrivateRoute path="/user/QueenBee/:userId" component={ViewBeeImage}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
         <Route path="/useradmin/:userId" component={UserAdmin}/>

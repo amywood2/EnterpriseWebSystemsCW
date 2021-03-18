@@ -80,29 +80,12 @@ const update = async (req, res) => {
   }
 }
 
-const updateBeeViews = async (req, res) => {
+const updateTotalViews = async (req, res) => {
   try {
     let user = req.profile
     user = extend(user, req.body)
     user.updated = Date.now()
-    user.beeImageViews = user.beeImageViews + 1
-    await user.save()
-    user.hashed_password = undefined
-    user.salt = undefined
-    res.json(user)
-  } catch (err) {
-    return res.status(400).json({
-      error: errorHandler.getErrorMessage(err)
-    })
-  }
-}
-
-const updateCactusViews = async (req, res) => {
-  try {
-    let user = req.profile
-    user = extend(user, req.body)
-    user.updated = Date.now()
-    user.cactusImageViews = user.cactusImageViews + 1
+    user.totalViews = user.totalViews + 1
     await user.save()
     user.hashed_password = undefined
     user.salt = undefined
@@ -135,7 +118,6 @@ export default {
   list,
   listadmin,
   update,
-  updateBeeViews,
-  updateCactusViews,
+  updateTotalViews,
   remove
 }

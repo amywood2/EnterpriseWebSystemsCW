@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography'
 import Icon from '@material-ui/core/Icon'
 import { makeStyles } from '@material-ui/core/styles'
 import auth from './../auth/auth-helper'
-import {read, updateBeeViews, updateCactusViews} from './api-user.js'
+import {read, updateTotalViews} from './api-user.js'
 import {Redirect} from 'react-router-dom'
 import Carousel from './../core/Carousel.js'
 import cactus from './../assets/images/cactus.png'
@@ -23,6 +23,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
 import ListItemText from '@material-ui/core/ListItemText'
 import IconButton from '@material-ui/core/IconButton'
+import {Link } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -82,14 +83,14 @@ export default function Gallery({ match }) {
 
   }, [match.params.userId])
 
-  const clickBeeView = () => {
+  const clickTotalViews = () => {
     const user = {
       name: values.name || undefined,
       about: values.about || undefined,
       email: values.email || undefined,
       password: values.password || undefined
     }
-    updateBeeViews({
+    updateTotalViews({
       userId: match.params.userId
     }, {
       t: jwt.token
@@ -101,27 +102,6 @@ export default function Gallery({ match }) {
       }
     })
   }
-
-  const clickCactusView = () => {
-    const user = {
-      name: values.name || undefined,
-      about: values.about || undefined,
-      email: values.email || undefined,
-      password: values.password || undefined
-    }
-    updateCactusViews({
-      userId: match.params.userId
-    }, {
-      t: jwt.token
-    }, user).then((data) => {
-      if (data && data.error) {
-        setValues({...values, error: data.error})
-      } else {
-        setValues({...values, userId: data._id, redirectToProfile: false})
-      }
-    })
-  }
-
 
     return (
     <div style={{display: "inline-block", padding: "20px"}}>
@@ -133,9 +113,13 @@ export default function Gallery({ match }) {
     </Typography>
     <img src={bee} alt="beeImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
-      Description
     </Typography>
-    <Button onClick={clickBeeView}>View</Button>
+    {auth.isAuthenticated() && (<span>
+    <Link to={"/user/QueenBee/" + auth.isAuthenticated().user._id}>
+      <Button onClick={clickTotalViews}> View </Button>
+    </Link>
+    </span>)
+    }
     <IconButton aria-label="Save">
         <FavoriteBorderOutlinedIcon/>
     </IconButton>
@@ -148,15 +132,81 @@ export default function Gallery({ match }) {
       The Land of Cactus
     </Typography>
     <img src={cactus} alt="cactusImage" style={{height: "200px", width: "300px"}} />
-    <Typography variant="h6">
-      Description
+      <Typography variant="h6">
+      </Typography>
+      {auth.isAuthenticated() && (<span>
+      <Link to={"/user/landOfCactus/" + auth.isAuthenticated().user._id}>
+        <Button onClick={clickTotalViews}> View </Button>
+      </Link>
+      </span>)
+      }
+
+      <IconButton aria-label="Save">
+      <FavoriteBorderOutlinedIcon/>
+     </IconButton>
+   </Card>
+  </div>
+
+  <div>
+    <Card className={classes.card}>
+    <Typography variant="h6" className={classes.title}>
+      The City
     </Typography>
-    <Button onClick={clickCactusView}>View</Button>
+    <img src={city} alt="cityImage" style={{height: "200px", width: "300px"}} />
+    <Typography variant="h6">
+    </Typography>
+    <Button onClick={clickTotalViews}>View</Button>
     <IconButton aria-label="Save">
         <FavoriteBorderOutlinedIcon/>
     </IconButton>
     </Card>
     </div>
+
+  <div>
+    <Card className={classes.card}>
+    <Typography variant="h6" className={classes.title}>
+      Summer Bloom
+    </Typography>
+    <img src={flower} alt="flowerImage" style={{height: "200px", width: "300px"}} />
+    <Typography variant="h6">
+    </Typography>
+    <Button onClick={clickTotalViews}>View</Button>
+    <IconButton aria-label="Save">
+        <FavoriteBorderOutlinedIcon/>
+    </IconButton>
+    </Card>
+    </div>
+
+    <div>
+    <Card className={classes.card}>
+    <Typography variant="h6" className={classes.title}>
+      Home
+    </Typography>
+    <img src={house} alt="houseImage" style={{height: "200px", width: "300px"}} />
+    <Typography variant="h6">
+    </Typography>
+    <Button onClick={clickTotalViews}>View</Button>
+    <IconButton aria-label="Save">
+        <FavoriteBorderOutlinedIcon/>
+    </IconButton>
+    </Card>
+    </div>
+
+    <div>
+    <Card className={classes.card}>
+    <Typography variant="h6" className={classes.title}>
+      Ice Cold
+    </Typography>
+    <img src={iceburg} alt="iceburgImage" style={{height: "200px", width: "300px"}} />
+    <Typography variant="h6">
+    </Typography>
+    <Button onClick={clickTotalViews}>View</Button>
+    <IconButton aria-label="Save">
+        <FavoriteBorderOutlinedIcon/>
+    </IconButton>
+    </Card>
+    </div>
+
 
 
     </div>

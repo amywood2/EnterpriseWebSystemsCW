@@ -14,8 +14,7 @@ router.route('/api/users')
 router.route('/api/users/:userId')
   .get(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.read)
   .put(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.update)
-  .post(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.updateBeeViews)
-  .post(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.updateCactusViews)
+  .post(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.updateTotalViews)
   .delete(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.remove)
 
 
