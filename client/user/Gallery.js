@@ -17,6 +17,8 @@ import city from './../assets/images/city.png'
 import flower from './../assets/images/flower.png'
 import iceburg from './../assets/images/iceburg.png'
 import house from './../assets/images/house.png'
+import daisy from './../assets/images/daisy.png'
+import field from './../assets/images/field.png'
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import ListItem from '@material-ui/core/ListItem'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar'
