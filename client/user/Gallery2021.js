@@ -253,7 +253,7 @@ export default function Gallery2021({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      Swim and win
+      Swim and Win
     </Typography>
     <img src={swim} alt="swimImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
