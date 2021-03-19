@@ -152,7 +152,6 @@ export {
   list,
   read,
   update,
-  collection2020TotalViews,
   collection2021TotalViews,
   collection2020ImageViews,
   collection2021ImageViews,

@@ -2,7 +2,7 @@ import React, {useState, useEffect}from 'react'
 import Button from '@material-ui/core/Button'
 import {Link, withRouter} from 'react-router-dom'
 import auth from './../auth/auth-helper'
-import {read, collection2020TotalViews,collection2021TotalViews} from './../user/api-user.js'
+import {read,update,collection2021TotalViews} from './../user/api-user.js'
 import {Redirect} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
@@ -51,7 +51,7 @@ export default function Collections({ match }){
       email: values.email || undefined,
       password: values.password || undefined
     }
-    collection2020TotalViews({
+   update({
       userId: match.params.userId
     }, {
       t: jwt.token
