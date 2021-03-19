@@ -4,7 +4,8 @@ import Home from './core/Home'
 import Users from './user/Users'
 import Signup from './user/Signup'
 import Signin from './auth/Signin'
-import Gallery from './user/Gallery'
+import Gallery2020 from './user/Gallery2020'
+import Gallery2021 from './user/Gallery2021'
 import Collections from './core/Collections'
 import ViewCactusImage from './core/ViewCactusImage'
 import ViewBeeImage from './core/ViewBeeImage'
@@ -29,7 +30,8 @@ const MainRouter = () => {
         <Route path="/users" component={Users}/>
         <Route path="/signup" component={Signup}/>
         <Route path="/signin" component={Signin}/>
-        <PrivateRoute path="/user/gallery/:userId" component={Gallery}/>
+        <PrivateRoute path="/user/gallery2020/:userId" component={Gallery2020}/>
+        <PrivateRoute path="/user/gallery2021/:userId" component={Gallery2021}/>
         <PrivateRoute path="/user/collections/:userId" component={Collections}/>
         <PrivateRoute path="/user/landOfCactus/:userId" component={ViewCactusImage}/>
         <PrivateRoute path="/user/QueenBee/:userId" component={ViewBeeImage}/>

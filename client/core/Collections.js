@@ -4,7 +4,7 @@ import {Link, withRouter} from 'react-router-dom'
 import auth from './../auth/auth-helper'
 
 
-const Hero = withRouter(({history}) => (
+export default function Collections({ match }){
     <div style={{
       height: "50vh",
       width: "100%",
@@ -19,22 +19,26 @@ const Hero = withRouter(({history}) => (
         fontSize: '40px',
         marginTop:'-100px',
         textAlign:"center",
-      }}> Welcome To The Gallery </h1>
+      }}> Discover my Projects </h1>
 
       {auth.isAuthenticated() && (<span>
-      <Link to={"/user/gallery/" + auth.isAuthenticated().user._id}>
+      <Link to={"/user/gallery2020/" + auth.isAuthenticated().user._id}>
       <Button color="primary" autoFocus="autoFocus" variant="contained">
         Collection 2020
       </Button>
       </Link>
       </span>)
       }
-
-      <Link to="/signin">
-        <Button color="primary" autoFocus="autoFocus" variant="contained">
-          Collection 2021
-        </Button>
+      {auth.isAuthenticated() && (<span>
+      <Link to={"/user/gallery2021/" + auth.isAuthenticated().user._id}>
+      <Button color="primary" autoFocus="autoFocus" variant="contained">
+        Collection 2021
+      </Button>
       </Link>
+      </span>)
+      }
+      
       </div>
-))
-export default Hero
+
+
+  }

@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function Gallery({ match }) {
+export default function Gallery2021({ match }) {
   const classes = useStyles()
   const [values, setValues] = useState({
     name: '',
@@ -269,9 +269,6 @@ export default function Gallery({ match }) {
     </IconButton>
     </Card>
     </div>
-
-
-
 
     </div>
     )
