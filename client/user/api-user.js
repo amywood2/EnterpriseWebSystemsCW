@@ -96,7 +96,7 @@ const collection2021TotalViews = async (params, credentials, user) => {
   }
 }
 
-const collection2021ImageViews = async (params, credentials, user) => {
+const collection2020ImageViews = async (params, credentials, user) => {
   try {
     let response = await fetch('/api/users/' + params.userId, {
       method: 'POST',

@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography'
 import Icon from '@material-ui/core/Icon'
 import { makeStyles } from '@material-ui/core/styles'
 import auth from './../auth/auth-helper'
-import {read, updateTotalViews} from './api-user.js'
+import {read,  collection2020TotalViews} from './api-user.js'
 import {Redirect} from 'react-router-dom'
 import Carousel from './../core/Carousel.js'
 import cactus from './../assets/images/cactus.png'
@@ -85,14 +85,14 @@ export default function Gallery20201({ match }) {
 
   }, [match.params.userId])
 
-  const clickTotalViews = () => {
+  const click2020Image = () => {
     const user = {
       name: values.name || undefined,
       about: values.about || undefined,
       email: values.email || undefined,
       password: values.password || undefined
     }
-    updateTotalViews({
+    collection2020ImageViews({
       userId: match.params.userId
     }, {
       t: jwt.token
@@ -118,7 +118,7 @@ export default function Gallery20201({ match }) {
     </Typography>
     {auth.isAuthenticated() && (<span>
     <Link to={"/user/QueenBee/" + auth.isAuthenticated().user._id}>
-      <Button onClick={clickTotalViews}> View </Button>
+      <Button onClick={click2020Image}> View </Button>
     </Link>
     </span>)
     }
@@ -138,7 +138,7 @@ export default function Gallery20201({ match }) {
     </Typography>
     {auth.isAuthenticated() && (<span>
     <Link to={"/user/fieldOfDreams/" + auth.isAuthenticated().user._id}>
-      <Button onClick={clickTotalViews}> View </Button>
+      <Button onClick={click2020Image}> View </Button>
     </Link>
     </span>)
     }
@@ -158,7 +158,7 @@ export default function Gallery20201({ match }) {
       </Typography>
       {auth.isAuthenticated() && (<span>
       <Link to={"/user/landOfCactus/" + auth.isAuthenticated().user._id}>
-        <Button onClick={clickTotalViews}> View </Button>
+        <Button onClick={click2020Image}> View </Button>
       </Link>
       </span>)
       }
@@ -178,7 +178,7 @@ export default function Gallery20201({ match }) {
     </Typography>
     {auth.isAuthenticated() && (<span>
     <Link to={"/user/theCity/" + auth.isAuthenticated().user._id}>
-      <Button onClick={clickTotalViews}> View </Button>
+      <Button onClick={click2020Image}> View </Button>
     </Link>
     </span>)
     }
@@ -200,7 +200,7 @@ export default function Gallery20201({ match }) {
     </Typography>
     {auth.isAuthenticated() && (<span>
     <Link to={"/user/summerBloom/" + auth.isAuthenticated().user._id}>
-      <Button onClick={clickTotalViews}> View </Button>
+      <Button onClick={click2020Image}> View </Button>
     </Link>
     </span>)
     }
@@ -220,7 +220,7 @@ export default function Gallery20201({ match }) {
     </Typography>
     {auth.isAuthenticated() && (<span>
     <Link to={"/user/ourHome/" + auth.isAuthenticated().user._id}>
-      <Button onClick={clickTotalViews}> View </Button>
+      <Button onClick={click2020Image}> View </Button>
     </Link>
     </span>)
     }
@@ -240,7 +240,7 @@ export default function Gallery20201({ match }) {
     </Typography>
     {auth.isAuthenticated() && (<span>
     <Link to={"/user/iceCold/" + auth.isAuthenticated().user._id}>
-      <Button onClick={clickTotalViews}> View </Button>
+      <Button onClick={click2020Image}> View </Button>
     </Link>
     </span>)
     }
@@ -260,7 +260,7 @@ export default function Gallery20201({ match }) {
     </Typography>
     {auth.isAuthenticated() && (<span>
     <Link to={"/user/daisyField/" + auth.isAuthenticated().user._id}>
-      <Button onClick={clickTotalViews}> View </Button>
+      <Button onClick={click2020Image}> View </Button>
     </Link>
     </span>)
     }

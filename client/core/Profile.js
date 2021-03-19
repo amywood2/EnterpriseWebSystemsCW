@@ -136,9 +136,7 @@ export default function Profile({ match }) {
           </Typography>
 
 
-          <ListItem>
-          <ListItemText primary={"Total picturers viewed: " + user.totalViews+ " views"}/>
-          </ListItem>
+      
           </List>
       </Paper>
         </div>

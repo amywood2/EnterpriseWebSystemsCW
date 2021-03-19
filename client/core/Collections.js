@@ -1,13 +1,19 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect}from 'react'
 import Button from '@material-ui/core/Button'
 import {Link, withRouter} from 'react-router-dom'
 import auth from './../auth/auth-helper'
+import {read, collection2020TotalViews,collection2021TotalViews} from './../user/api-user.js'
+import {Redirect} from 'react-router-dom'
+import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
-import {read, updateCollection2020, updateCollection2021} from './api-user.js'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import TextField from '@material-ui/core/TextField'
+import Typography from '@material-ui/core/Typography'
+import Icon from '@material-ui/core/Icon'
 
 
 export default function Collections({ match }){
-  const classes = useStyles()
   const [values, setValues] = useState({
     name: '',
     about:'',
@@ -45,7 +51,7 @@ export default function Collections({ match }){
       email: values.email || undefined,
       password: values.password || undefined
     }
-    updateCollection2020({
+    collection2020TotalViews({
       userId: match.params.userId
     }, {
       t: jwt.token
@@ -65,7 +71,7 @@ export default function Collections({ match }){
       email: values.email || undefined,
       password: values.password || undefined
     }
-    updateCollection2021({
+    collection2021TotalViews({
       userId: match.params.userId
     }, {
       t: jwt.token
@@ -77,9 +83,9 @@ export default function Collections({ match }){
       }
     })
   }
-  const handleChange = name => event => {
-    setValues({...values, [name]: event.target.value})
-  }
+
+
+
   return (
     <div style={{
       height: "50vh",
@@ -100,7 +106,7 @@ export default function Collections({ match }){
     <p> The new collection aims to inspire and encourage young photographers to take in the world. </p>
     {auth.isAuthenticated() && (<span>
      <Link to={"/user/gallery2020/" + auth.isAuthenticated().user._id}>
-     <Button onClick={clickCollection2021} color="primary" autoFocus="autoFocus" variant="contained" >
+     <Button onClick={clickCollection2020} color="primary" autoFocus="autoFocus" variant="contained" >
        Collection 2020
      </Button>
      </Link>
@@ -108,7 +114,7 @@ export default function Collections({ match }){
      }
      {auth.isAuthenticated() && (<span>
      <Link to={"/user/gallery2021/" + auth.isAuthenticated().user._id}>
-     <Button onClick={clickCollection2020} color="primary" autoFocus="autoFocus" variant="contained">
+     <Button onClick={clickCollection2021} color="primary" autoFocus="autoFocus" variant="contained">
        Collection 2021
      </Button>
      </Link>

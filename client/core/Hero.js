@@ -6,7 +6,7 @@ import auth from './../auth/auth-helper'
 
 const Hero = withRouter(({history}) => (
     <div style={{
-      height: "50vh",
+      height: "70vh",
       width: "100%",
       display: "flex",
       flexDirection: "column",
@@ -16,7 +16,7 @@ const Hero = withRouter(({history}) => (
     }}>
       <h1 style={{
         color: "#000",
-        fontSize: '40px',
+        fontSize: '30px',
         marginTop:'-100px',
         textAlign:"center",
       }}> Discover my Projects </h1>

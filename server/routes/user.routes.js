@@ -16,10 +16,7 @@ router.route('/api/users/:userId')
   .put(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.update)
   .post(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.collection2020TotalViews)
   .post(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.collection2021TotalViews)
-  .post(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.collection2020ImageViews)
-  .post(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.collection2021ImageViews)
   .delete(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.remove)
-
 
 router.param('userId', userCtrl.userByID)
 

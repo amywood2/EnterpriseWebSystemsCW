@@ -44,6 +44,7 @@ const MainRouter = () => {
         <PrivateRoute path="/user/gallery2020/:userId" component={Gallery2020}/>
         <PrivateRoute path="/user/gallery2021/:userId" component={Gallery2021}/>
         <PrivateRoute path="/user/collections/:userId" component={Collections}/>
+
         <PrivateRoute path="/user/landOfCactus/:userId" component={ViewCactusImage}/>
         <PrivateRoute path="/user/QueenBee/:userId" component={ViewBeeImage}/>
         <PrivateRoute path="/user/theCity/:userId" component={ViewCityImage}/>
