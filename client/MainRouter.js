@@ -5,6 +5,7 @@ import Users from './user/Users'
 import Signup from './user/Signup'
 import Signin from './auth/Signin'
 import Gallery from './user/Gallery'
+import Collections from './core/Collections'
 import ViewCactusImage from './core/ViewCactusImage'
 import ViewBeeImage from './core/ViewBeeImage'
 import ViewCityImage from './core/ViewCityImage'
@@ -29,6 +30,7 @@ const MainRouter = () => {
         <Route path="/signup" component={Signup}/>
         <Route path="/signin" component={Signin}/>
         <PrivateRoute path="/user/gallery/:userId" component={Gallery}/>
+        <PrivateRoute path="/user/collections/:userId" component={Collections}/>
         <PrivateRoute path="/user/landOfCactus/:userId" component={ViewCactusImage}/>
         <PrivateRoute path="/user/QueenBee/:userId" component={ViewBeeImage}/>
         <PrivateRoute path="/user/theCity/:userId" component={ViewCityImage}/>
@@ -38,7 +40,6 @@ const MainRouter = () => {
         <PrivateRoute path="/user/fieldOfDreams/:userId" component={ViewFieldImage}/>
         <PrivateRoute path="/user/daisyField/:userId" component={ViewDaisyImage}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
-
         <Route path="/user/:userId" component={Profile}/>
         <Route path="/useradmin/:userId" component={UserAdmin}/>
      </Switch>

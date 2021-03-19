@@ -106,7 +106,7 @@ export default function Gallery({ match }) {
   }
 
     return (
-    <div style={{padding: "10px",  display: "grid", overflow: "hidden", gridTemplateColumns: "repeat(auto-fill, minmax(20rem, 1fr))"}}>
+    <div style={{display: "grid", overflow: "hidden", gridTemplateColumns: "repeat(auto-fill, minmax(20rem, 1fr))"}}>
 
     <div>
     <Card className={classes.card}>

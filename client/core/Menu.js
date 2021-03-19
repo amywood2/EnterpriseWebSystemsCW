@@ -29,7 +29,7 @@ const Menu = withRouter(({history}) => (
       </span>)
       }
       {auth.isAuthenticated() && (<span>
-      <Link to={"/user/gallery/" + auth.isAuthenticated().user._id}>
+      <Link to={"/user/collections/" + auth.isAuthenticated().user._id}>
         <IconButton aria-label="Home" style={isActive(history, "/user/gallery" + auth.isAuthenticated().user._id)}>
           <HomeIcon/>
         </IconButton>
