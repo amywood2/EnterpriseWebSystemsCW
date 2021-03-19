@@ -33,7 +33,22 @@ const UserSchema = new mongoose.Schema({
     default: 0,
     min: 0,
   },
-  totalViews:{
+  collection2020TotalViews:{
+    type: Number,
+    default: 0,
+    min: 0,
+  },
+  collection2021TotalViews:{
+    type: Number,
+    default: 0,
+    min: 0,
+  },
+  collection2020ImageViews:{
+    type: Number,
+    default: 0,
+    min: 0,
+  },
+  collection2021ImageViews:{
     type: Number,
     default: 0,
     min: 0,

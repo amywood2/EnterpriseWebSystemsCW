@@ -62,7 +62,58 @@ const update = async (params, credentials, user) => {
   }
 }
 
-const updateTotalViews = async (params, credentials, user) => {
+const collection2020TotalViews = async (params, credentials, user) => {
+  try {
+    let response = await fetch('/api/users/' + params.userId, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + credentials.t,
+      },
+      body: JSON.stringify(user)
+    })
+    return await response.json()
+  } catch(err) {
+    console.log(err)
+  }
+}
+
+const collection2021TotalViews = async (params, credentials, user) => {
+  try {
+    let response = await fetch('/api/users/' + params.userId, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + credentials.t,
+      },
+      body: JSON.stringify(user)
+    })
+    return await response.json()
+  } catch(err) {
+    console.log(err)
+  }
+}
+
+const collection2021ImageViews = async (params, credentials, user) => {
+  try {
+    let response = await fetch('/api/users/' + params.userId, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + credentials.t,
+      },
+      body: JSON.stringify(user)
+    })
+    return await response.json()
+  } catch(err) {
+    console.log(err)
+  }
+}
+
+const collection2021ImageViews = async (params, credentials, user) => {
   try {
     let response = await fetch('/api/users/' + params.userId, {
       method: 'POST',
@@ -101,6 +152,9 @@ export {
   list,
   read,
   update,
-  updateTotalViews,
+  collection2020TotalViews,
+  collection2021TotalViews,
+  collection2020ImageViews,
+  collection2021ImageViews,
   remove
 }
