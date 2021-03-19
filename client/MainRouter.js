@@ -7,14 +7,25 @@ import Signin from './auth/Signin'
 import Gallery2020 from './user/Gallery2020'
 import Gallery2021 from './user/Gallery2021'
 import Collections from './core/Collections'
-import ViewCactusImage from './core/ViewCactusImage'
-import ViewBeeImage from './core/ViewBeeImage'
-import ViewCityImage from './core/ViewCityImage'
-import ViewFlowerImage from './core/ViewFlowerImage'
-import ViewHomeImage from './core/ViewHomeImage'
-import ViewIceburgImage from './core/ViewIceburgImage'
-import ViewDaisyImage from './core/ViewDaisyImage'
-import ViewFieldImage from './core/ViewFieldImage'
+
+import ViewCactusImage from './core/2020/ViewCactusImage'
+import ViewBeeImage from './core/2020/ViewBeeImage'
+import ViewCityImage from './core/2020/ViewCityImage'
+import ViewFlowerImage from './core/2020/ViewFlowerImage'
+import ViewHomeImage from './core/2020/ViewHomeImage'
+import ViewIceburgImage from './core/2020/ViewIceburgImage'
+import ViewDaisyImage from './core/2020/ViewDaisyImage'
+import ViewFieldImage from './core/2020/ViewFieldImage'
+
+import ViewBalloonImage from './core/2021/ViewBalloonImage'
+import ViewBirdImage from './core/2021/ViewBirdImage'
+import ViewCarrotImage from './core/2021/ViewCarrotImage'
+import ViewCatImage from './core/2021/ViewCatImage'
+import ViewGirlImage from './core/2021/ViewGirlImage'
+import ViewGrapesImage from './core/2021/ViewGrapesImage'
+import ViewPaintImage from './core/2021/ViewPaintImage'
+import ViewSwimImage from './core/2021/ViewSwimImage'
+
 import EditProfile from './user/EditProfile'
 import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
@@ -41,6 +52,16 @@ const MainRouter = () => {
         <PrivateRoute path="/user/iceCold/:userId" component={ViewIceburgImage}/>
         <PrivateRoute path="/user/fieldOfDreams/:userId" component={ViewFieldImage}/>
         <PrivateRoute path="/user/daisyField/:userId" component={ViewDaisyImage}/>
+
+        <PrivateRoute path="/user/Airballoon/:userId" component={ViewBalloonImage}/>
+        <PrivateRoute path="/user/riverBird/:userId" component={ViewBirdImage}/>
+        <PrivateRoute path="/user/carrotsForTea/:userId" component={ViewCarrotImage}/>
+        <PrivateRoute path="/user/stalkingCat/:userId" component={ViewCatImage}/>
+        <PrivateRoute path="/user/Dreaming/:userId" component={ViewGirlImage}/>
+        <PrivateRoute path="/user/aBunch/:userId" component={ViewGrapesImage}/>
+        <PrivateRoute path="/user/paintingLines/:userId" component={ViewPaintImage}/>
+        <PrivateRoute path="/user/swimAndWin/:userId" component={ViewSwimImage}/>
+
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
         <Route path="/useradmin/:userId" component={UserAdmin}/>
