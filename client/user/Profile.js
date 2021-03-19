@@ -122,7 +122,7 @@ export default function Profile({ match }) {
       <div style={{float:"left", width: "100%", height: "50hv"}}>
       <Paper className={classes.root} elevation={4}>
       <Typography variant="h6" className={classes.title}>
-        Interactions
+        Interaction Dashboard
       </Typography>
         <List dense>
           <ListItem>
