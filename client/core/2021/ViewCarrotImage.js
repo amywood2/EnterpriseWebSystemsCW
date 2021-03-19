@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Card from '@material-ui/core/Card'
 import { makeStyles } from '@material-ui/core/styles'
-import carrotImage from './../assets/images/carrot.png'
+import carrotImage from '../../assets/images/carrot.png'
 
 const useStyles = makeStyles(theme => ({
   card: {

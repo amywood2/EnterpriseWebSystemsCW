@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Card from '@material-ui/core/Card'
 import { makeStyles } from '@material-ui/core/styles'
-import beeImage from './../assets/images/bee.png'
+import beeImage from '../../assets/images/bee.png'
 
 const useStyles = makeStyles(theme => ({
   card: {
