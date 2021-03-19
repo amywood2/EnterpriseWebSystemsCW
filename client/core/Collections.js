@@ -99,11 +99,12 @@ export default function Collections({ match }){
     <h1 style={{
       color: "#000",
       fontSize: '40px',
-      marginTop:'-100px',
+      padding: "20px",
       textAlign:"center",
+      fontFamily: "Verdana"
     }}> Welcome to the Gallery </h1>
-    <p> Our 2020 Collection has been are most successful and we are so proud to share it with you. </p>
-    <p> The new collection aims to inspire and encourage young photographers to take in the world. </p>
+    <p style={{fontFamily: "Verdana"}}>  Our 2020 Collection has been are most successful and we are so proud to share it with you. </p>
+    <p style={{fontFamily: "Verdana"}}> The new collection aims to inspire and encourage young photographers to take in the world. </p>
     {auth.isAuthenticated() && (<span>
      <Link to={"/user/gallery2020/" + auth.isAuthenticated().user._id}>
      <Button onClick={clickCollection2020} color="primary" autoFocus="autoFocus" variant="contained" >

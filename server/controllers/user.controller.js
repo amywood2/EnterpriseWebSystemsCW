@@ -86,6 +86,7 @@ const collection2020TotalViews = async (req, res) => {
     let user = req.profile
     user = extend(user, req.body)
     user.updated = Date.now()
+    user.profileclicks = user.profileclicks + 1
     user.collection2020TotalViews = user.collection2020TotalViews + 1
     await user.save()
     user.hashed_password = undefined

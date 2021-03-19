@@ -25,9 +25,6 @@ function Footer() {
         All images curtsy of Microsoft PowerPoint Stock Images
       </Typography>
       </section>
-
-
-
     </div>
   );
 }

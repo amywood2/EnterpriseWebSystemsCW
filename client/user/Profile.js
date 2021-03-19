@@ -110,6 +110,11 @@ export default function Profile({ match }) {
           	<ListItemText primary={user.about}/>
           </ListItem>
           <Divider/>
+
+          <ListItem>
+            <ListItemText primary={"Joined: " + (
+              new Date(user.created)).toDateString()}/>
+          </ListItem>
           </List>
       </Paper>
       </div>
@@ -121,13 +126,9 @@ export default function Profile({ match }) {
       </Typography>
         <List dense>
           <ListItem>
-          	<ListItemText primary={"Profile edits: " + user.profileclicks}/>
+          	<ListItemText primary={"Total interactions: " + user.profileclicks}/>
           </ListItem>
 
-          <ListItem>
-            <ListItemText primary={"Joined: " + (
-              new Date(user.created)).toDateString()}/>
-          </ListItem>
 
           <Divider/>
 
@@ -137,7 +138,11 @@ export default function Profile({ match }) {
 
 
           <ListItem>
-          <ListItemText primary={"Total picturers viewed: " + user.totalViews+ " views"}/>
+          <ListItemText primary={"Collection 2020: " + user.collection2020TotalViews+ " views"}/>
+          </ListItem>
+
+          <ListItem>
+          <ListItemText primary={"Collection 2021: " + user.collection2021TotalViews+ " views"}/>
           </ListItem>
           </List>
       </Paper>

@@ -6,7 +6,7 @@ import auth from './../auth/auth-helper'
 
 const Hero = withRouter(({history}) => (
     <div style={{
-      height: "70vh",
+      height: "85vh",
       width: "100%",
       display: "flex",
       flexDirection: "column",
@@ -19,7 +19,8 @@ const Hero = withRouter(({history}) => (
         fontSize: '30px',
         marginTop:'-100px',
         textAlign:"center",
-      }}> Discover my Projects </h1>
+        fontFamily:"Verdana"
+      }}> Enter the Gallery </h1>
 
       <Link to="/signin">
         <Button color="primary" autoFocus="autoFocus" variant="contained">
