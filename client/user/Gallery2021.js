@@ -151,13 +151,13 @@ export default function Gallery2021({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      Carrots for tea
+      Fresh Carrots
     </Typography>
     <img src={carrot} alt="carrotImage" style={{height: "200px", width: "300px"}} />
       <Typography variant="h6">
       </Typography>
       {auth.isAuthenticated() && (<span>
-      <Link to={"/user/carrotsForTea/" + auth.isAuthenticated().user._id}>
+      <Link to={"/user/freshCarrots/" + auth.isAuthenticated().user._id}>
         <Button onClick={click2021Image}> View </Button>
       </Link>
       </span>)
@@ -213,7 +213,7 @@ export default function Gallery2021({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      A bunch
+      A Bunch
     </Typography>
     <img src={grapes} alt="grapesImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
