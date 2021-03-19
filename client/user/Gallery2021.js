@@ -11,14 +11,14 @@ import auth from './../auth/auth-helper'
 import {read, updateTotalViews} from './api-user.js'
 import {Redirect} from 'react-router-dom'
 import Carousel from './../core/Carousel.js'
-import cactus from './../assets/images/cactus.png'
-import bee from './../assets/images/bee.png'
-import city from './../assets/images/city.png'
-import flower from './../assets/images/flower.png'
-import iceburg from './../assets/images/iceburg.png'
-import house from './../assets/images/house.png'
-import daisy from './../assets/images/daisy.png'
-import field from './../assets/images/field.png'
+import balloon from './../assets/images/balloon.png'
+import bird from './../assets/images/bird.png'
+import carrot from './../assets/images/carrot.png'
+import cat from './../assets/images/cat.png'
+import girl from './../assets/images/girl.png'
+import grapes from './../assets/images/grapes.png'
+import paint from './../assets/images/paint.png'
+import swim from './../assets/images/swim.png'
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import ListItem from '@material-ui/core/ListItem'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar'
@@ -111,13 +111,13 @@ export default function Gallery2021({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      Queen Bee
+        High Up In a Hot Air Balloon
     </Typography>
-    <img src={bee} alt="beeImage" style={{height: "200px", width: "300px"}} />
+    <img src={balloon} alt="balloonImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
     </Typography>
     {auth.isAuthenticated() && (<span>
-    <Link to={"/user/QueenBee/" + auth.isAuthenticated().user._id}>
+    <Link to={"/user/Airballoon/" + auth.isAuthenticated().user._id}>
       <Button onClick={clickTotalViews}> View </Button>
     </Link>
     </span>)
@@ -131,13 +131,13 @@ export default function Gallery2021({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      Field of Dreams
+      River Bird
     </Typography>
-    <img src={field} alt="fieldImage" style={{height: "200px", width: "300px"}} />
+    <img src={bird} alt="birdImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
     </Typography>
     {auth.isAuthenticated() && (<span>
-    <Link to={"/user/fieldOfDreams/" + auth.isAuthenticated().user._id}>
+    <Link to={"/user/riverBird/" + auth.isAuthenticated().user._id}>
       <Button onClick={clickTotalViews}> View </Button>
     </Link>
     </span>)
@@ -151,13 +151,13 @@ export default function Gallery2021({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      The Land of Cactus
+      Carrots for tea
     </Typography>
-    <img src={cactus} alt="cactusImage" style={{height: "200px", width: "300px"}} />
+    <img src={carrot} alt="carrotImage" style={{height: "200px", width: "300px"}} />
       <Typography variant="h6">
       </Typography>
       {auth.isAuthenticated() && (<span>
-      <Link to={"/user/landOfCactus/" + auth.isAuthenticated().user._id}>
+      <Link to={"/user/carrotsForTea/" + auth.isAuthenticated().user._id}>
         <Button onClick={clickTotalViews}> View </Button>
       </Link>
       </span>)
@@ -171,13 +171,13 @@ export default function Gallery2021({ match }) {
   <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      The City
+       Stalking Cat
     </Typography>
-    <img src={city} alt="cityImage" style={{height: "200px", width: "300px"}} />
+    <img src={cat} alt="catImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
     </Typography>
     {auth.isAuthenticated() && (<span>
-    <Link to={"/user/theCity/" + auth.isAuthenticated().user._id}>
+    <Link to={"/user/stalkingCat/" + auth.isAuthenticated().user._id}>
       <Button onClick={clickTotalViews}> View </Button>
     </Link>
     </span>)
@@ -193,13 +193,13 @@ export default function Gallery2021({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      Summer Bloom
+      Dreaming
     </Typography>
-    <img src={flower} alt="flowerImage" style={{height: "200px", width: "300px"}} />
+    <img src={girl} alt="girlImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
     </Typography>
     {auth.isAuthenticated() && (<span>
-    <Link to={"/user/summerBloom/" + auth.isAuthenticated().user._id}>
+    <Link to={"/user/Dreaming/" + auth.isAuthenticated().user._id}>
       <Button onClick={clickTotalViews}> View </Button>
     </Link>
     </span>)
@@ -213,13 +213,13 @@ export default function Gallery2021({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      Our Home
+      A bunch
     </Typography>
-    <img src={house} alt="houseImage" style={{height: "200px", width: "300px"}} />
+    <img src={grapes} alt="grapesImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
     </Typography>
     {auth.isAuthenticated() && (<span>
-    <Link to={"/user/ourHome/" + auth.isAuthenticated().user._id}>
+    <Link to={"/user/aBunch/" + auth.isAuthenticated().user._id}>
       <Button onClick={clickTotalViews}> View </Button>
     </Link>
     </span>)
@@ -233,13 +233,13 @@ export default function Gallery2021({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      Ice Cold
+      Painting Lines
     </Typography>
-    <img src={iceburg} alt="iceburgImage" style={{height: "200px", width: "300px"}} />
+    <img src={paint} alt="paintImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
     </Typography>
     {auth.isAuthenticated() && (<span>
-    <Link to={"/user/iceCold/" + auth.isAuthenticated().user._id}>
+    <Link to={"/user/paintingLines/" + auth.isAuthenticated().user._id}>
       <Button onClick={clickTotalViews}> View </Button>
     </Link>
     </span>)
@@ -253,13 +253,13 @@ export default function Gallery2021({ match }) {
     <div>
     <Card className={classes.card}>
     <Typography variant="h6" className={classes.title}>
-      Daisy Field
+      Swim and win
     </Typography>
-    <img src={daisy} alt="daisyImage" style={{height: "200px", width: "300px"}} />
+    <img src={swim} alt="swimImage" style={{height: "200px", width: "300px"}} />
     <Typography variant="h6">
     </Typography>
     {auth.isAuthenticated() && (<span>
-    <Link to={"/user/daisyField/" + auth.isAuthenticated().user._id}>
+    <Link to={"/user/swimAndWin/" + auth.isAuthenticated().user._id}>
       <Button onClick={clickTotalViews}> View </Button>
     </Link>
     </span>)
